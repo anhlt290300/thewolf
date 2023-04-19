@@ -19,7 +19,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
-app.get("/", async (req, res) => {
+app.get("/a", async (req, res) => {
   const browser = startBrowser();
   const url = 'https://ananas.vn/product-list/'
   const data = await controller.scraperController_Filter(browser, url);
@@ -28,8 +28,8 @@ app.get("/", async (req, res) => {
 
 app.get("/abc", async (req, res) => {
   const browser = startBrowser();
-  const url = 'https://ananas.vn/product-list?gender=&category=top&attribute='
-  const data = await controller.scraperController_Shoe(browser, url);
+  const url = 'https://thewolf.vn/'
+  const data = await controller.scraperController_Header(browser, url);
   res.status(200).json(data);
 });
 

@@ -1,30 +1,11 @@
 const scraper = require("./scraper/scraper");
 const fs = require("fs");
-const scraperController_Shoe = async (browserInstance, url) => {
+const scraperController_Header = async (browserInstance, url) => {
   try {
     let browser = await browserInstance;
-    let data = [];
-    let listShoes = await scraper.scraper_Shoes(browser, url);
-    for (let i = 0; i < listShoes.length; i++) {
-      let { href, type, name, color, soldout } = listShoes[i];
-      let { images, info } = await scraper.scraper_Shoe(browser, href);
-      let { id, description, saleprice, realprice, sizes, colorsSame } = info;
-      data.push({
-        href: href.replace("https://ananas.vn", ""),
-        type: type,
-        name: name,
-        id: id,
-        description: description,
-        sizes: sizes,
-        colorsSame: colorsSame,
-        color: color,
-        saleprice: saleprice,
-        realprice: realprice,
-        images: images,
-        soldout: soldout,
-        category: "top",
-      });
-    }
+
+    let header = await scraper.scraper_Header(browser, url);
+    
     await browser.close();
 
     // // Lấy dữ liệu trong file json ra
@@ -41,7 +22,7 @@ const scraperController_Shoe = async (browserInstance, url) => {
     //   else console.log("Đào data thành công " + genre);
     // });
 
-    return data;
+    return header;
   } catch (error) {
     console.log("loi o scapercontroller " + error);
   }
@@ -76,6 +57,6 @@ const scraperController_Filter = async (browserInstance, url) => {
 };
 
 module.exports = {
-  scraperController_Shoe,
+  scraperController_Header,
   scraperController_Filter,
 };
