@@ -4,7 +4,7 @@ import { header, burgeroption } from "../../assets/fakeData/headerData";
 import { toggleBurger } from "../../redux/slice/BurgerSlice";
 import { toggleMark } from "../../redux/slice/MarkSlice";
 const HeaderBottomBurger = () => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const flag = useSelector((state) => state.burger.flag);
   const burgerRef = useRef(null);
   useEffect(() => {
@@ -28,6 +28,7 @@ const HeaderBottomBurger = () => {
   };
   return (
     <div
+      id="header-burger"
       ref={(el) => (burgerRef.current = el)}
       className=" tablet:w-[480px] w-[320px] h-screen bg-white fixed top-0 translate-x-full right-0 z-[999] transition-all duration-500 ease-easy_  text-sm select-none"
     >
@@ -49,7 +50,9 @@ const HeaderBottomBurger = () => {
                     >
                       <li className="h-[35px] relative">
                         <p className="w-[calc(100%-16px)]">
-                          <a href={item.href}>{item.title}</a>
+                          <a href={item.href} className="w-full inline-block">
+                            {item.title}
+                          </a>
                         </p>
                         {item.options[0].megaMenu && (
                           <span
@@ -73,7 +76,7 @@ const HeaderBottomBurger = () => {
                         )}
                       </li>
                       {item.options[0].megaMenu && (
-                        <ul className=" max-h-0 overflow-hidden transition-all duration-300 ease-linear group-[.open]:max-h-[200px] block">
+                        <ul className=" max-h-0 overflow-hidden transition-all duration-300 ease-easy_ group-[.open]:max-h-[200px] block">
                           {item.options[0].option.map((item_, index_) => {
                             return (
                               <li key={index_} className="py-[8px] pl-[25px]">
@@ -126,11 +129,13 @@ const HeaderBottomBurger = () => {
           </div>
         </div>
 
-        <button className=" absolute tablet:top-[60px] tablet:right-[70px] top-[40px] right-[30px] hover:scale-110 transition-all duration-200 ease-linear"
-        onClick={()=>{
-          dispatch(toggleBurger())
-          dispatch(toggleMark())
-        }}>
+        <button
+          className=" absolute tablet:top-[60px] tablet:right-[70px] top-[40px] right-[30px] hover:scale-110 transition-all duration-200 ease-linear"
+          onClick={() => {
+            dispatch(toggleBurger());
+            dispatch(toggleMark());
+          }}
+        >
           <span></span>
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -21,7 +21,7 @@ const Header = () => {
     }
   }, [flag]);
   return (
-    <header>
+    <header id="header" className=" fixed top-0 left-0 z-[999] w-full">
       <div className=" desktop:p-[10px] py-[10px] tablet:px-[15px] px-[12px] flex w-full select-none">
         <div className=" flex-1 desktop:block hidden" />
         <div className="">
@@ -33,7 +33,7 @@ const Header = () => {
             />
           </a>
         </div>
-        <div className=" flex-1 flex items-center justify-end desktop-L:text-white text-black">
+        <div className=" flex-1 flex items-center justify-end desktop:text-white text-black">
           <span className="tablet:px-2 px-1">
             <a href="/account">
               <svg
