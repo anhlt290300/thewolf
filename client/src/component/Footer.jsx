@@ -17,7 +17,7 @@ const Footer = () => {
             <div>
               <b className=" text-xs">THEWOLF - PR BẰNG GIÁ TRỊ CỐT LÕI</b>
               <br />
-              <p className=" text-xs mb-[10px] text-black-primary leading-5 tracking-widest">
+              <p className=" text-xs mb-[10px] text-black-primary leading-5 tracking-wide">
                 Trong thời trang, sự bền vững luôn là yếu tố hàng đầu. Nó là cả
                 một quá trình, từ việc bắt đầu tìm kiếm các nguồn cung cấp
                 nguyên liệu cho đến việc tạo ra những sản phẩm tới tay khách
@@ -88,7 +88,7 @@ const Footer = () => {
             <div className="tablet:mb-[20px] tablet:py-0 py-[10px] text-base leading-7">
               <p className=" desktop:text-right tablet:text-left text-center ">SOCIAL</p>
             </div>
-            <ul className=" tablet:mb-[15px] mb-[30px] grid grid-cols-4 desktop-L:gap-2 desktop:gap-4 mobile-L:gap-8 gap-5 desktop:w-full w-2/3 float-none tablet:float-left mobile-L:mx-auto">
+            <ul className=" tablet:mb-[15px] mb-[30px] grid grid-cols-4 desktop-L:gap-2 desktop:gap-4 mobile-L:gap-8 gap-5 desktop:w-full w-2/3 tablet:float-left float-none mx-auto">
               <li className=" flex items-center">
                 <a
                   href="https://www.facebook.com/TheWolf.vn/"
