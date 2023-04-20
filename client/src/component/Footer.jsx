@@ -5,7 +5,7 @@ const Footer = () => {
     <footer>
       <div className=" tablet:pt-[40px] tablet:pb-[30px] py-[20px] select-none">
         <div className="px-[30px] grid desktop:grid-cols-7 tablet:grid-cols-2 grid-cols-1 desktop-L:gap-12 desktop:gap-12 tablet:gap-4">
-          <div className=" tablet:mb-[20px] tablet:py-0 desktop-L:col-span-3 desktop:col-span-2 tablet:border-none border-b-[1px] border-[#efefef]">
+          <div className=" tablet:mb-[20px] tablet:py-0 desktop:col-span-3 tablet:border-none border-b-[1px] border-[#efefef]">
             <div className=" tablet:hidden flex justify-center items-center">
                 <div className=" inline-block w-[70px] m-auto">
                     <img src="https://file.hstatic.net/200000033444/file/thewolf_logo-02_2dc5965c18574fc385769c4781e90d28.png" alt="" />
@@ -84,11 +84,11 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div className=" tablet:mb-[20px] tablet:py-0  desktop-L:col-span-1 desktop:col-span-2 tablet:border-none border-b-[1px] border-[#efefef]">
+          <div className=" tablet:mb-[20px] tablet:py-0  desktop:col-span-1 tablet:border-none border-b-[1px] border-[#efefef]">
             <div className="tablet:mb-[20px] tablet:py-0 py-[10px] text-base leading-7">
               <p className=" desktop:text-right tablet:text-left text-center ">SOCIAL</p>
             </div>
-            <ul className=" tablet:mb-[15px] mb-[30px] grid grid-cols-4 desktop-L:gap-2 desktop:gap-4 mobile-L:gap-8 gap-5 desktop:w-full w-2/3 tablet:float-left float-none mx-auto">
+            <ul className=" tablet:mb-[15px] mb-[30px] grid grid-cols-4 desktop-L:gap-2 desktop:gap-2 mobile-L:gap-8 gap-5 desktop:w-full w-2/3 tablet:float-left float-none mx-auto">
               <li className=" flex items-center">
                 <a
                   href="https://www.facebook.com/TheWolf.vn/"

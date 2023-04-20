@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 
 const HomeCollection = () => {
   const products = getProductsByType("the-sean-wolf-collection");
-  console.log(products);
+
   return (
     <section>
       <div className="px-[15px] select-none">
@@ -54,10 +54,9 @@ const HomeCollection = () => {
                         <p className=" font-bold leading-4 text-sm mb-[5px] truncate">
                           <a href={item.title.href}>{item.title.content}</a>
                         </p>
-                        <p className=" text-sm text-black-primary">
-                          <span></span>
-                          {item.price.saleprice}
-                          <span>
+                        <p className=" text-black-primary">
+                          <span className=" text-hover-a text-sm">{item.price.saleprice}</span>
+                          <span className=" text-[#939393] text-[12px] ml-[5px]">
                             <del>{item.price.realprice}</del>
                           </span>
                         </p>
@@ -111,19 +110,19 @@ const HomeCollection = () => {
                         />
                       </a>
                       <div className=" inline-block absolute left-[10px] bottom-[10px] z-[30] ">
-                          <span className=" bg-[rgba(0,0,0,0.7)] text-white py-[2px] px-[8px] text-[10px] mr-[3px] font-medium leading-5 rounded">
-                            {item.price.saleprice}
-                          </span>
-                          <span className="text-[9px]">
-                            <del>{item.price.realprice}</del>
-                          </span>
+                        <span className=" bg-[rgba(0,0,0,0.7)] text-white py-[2px] px-[8px] text-[10px] mr-[3px] font-medium leading-5 rounded">
+                          {item.price.saleprice}
+                        </span>
+                        <span className="text-[9px]">
+                          <del>{item.price.realprice}</del>
+                        </span>
                       </div>
                     </div>
                     <div className="py-[20px]">
                       <div className=" text-center  text-[10.5px]">
                         <p className=" font-bold leading-4 mb-[5px] truncate">
                           <a href={item.title.href}>{item.title.content}</a>
-                        </p>                        
+                        </p>
                         {item.buyinstallment && (
                           <p className="">
                             <span className=" font-bold">
