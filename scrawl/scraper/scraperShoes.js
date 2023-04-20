@@ -1,80 +1,87 @@
-// async function autoScroll(page) {
-//   await page.evaluate(async () => {
-//     await new Promise((resolve) => {
-//       var totalHeight = 0;
-//       var distance = 300;
-//       var count = 0;
-//       var timer = setInterval(() => {
-//         //var scrollHeight = document.body.scrollHeight;
-//         window.scrollBy(0, distance);
-//         totalHeight += distance;
-//         count += 300;
-//         if (count >= 60000) {
-//           clearInterval(timer);
-//           resolve();
-//         }
-//       }, 300);
-//     });
-//   });
-// }
+const scraper_Shoes = (browser, url) =>
+  new Promise(async (res, reject) => {
+    try {
+      let newPage = await browser.newPage();
+      await newPage.setUserAgent(
+        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36"
+      );
+      await newPage.goto(url);
+      console.log("vao " + url);
 
-// const scraper_Shoes = (browser, url) =>
-//   new Promise(async (res, reject) => {
-//     try {
-//       let newPage = await browser.newPage();
-//       await newPage.setUserAgent(
-//         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/100.0.4896.88 Safari/537.36"
-//       );
-//       await newPage.goto(url);
+      await newPage.waitForSelector("#collection-body");
 
-//       await autoScroll(newPage);
+      const shoes = await newPage.$$eval(
+        "#collection-body > .col-md-12.col-sm-12.col-xs-12 > .row.filter-here > .content-product-list.product-list.filter.clearfix > .col-md-4.col-sm-6.col-xs-6.pro-loop.col-4",
+        (els) => {
+          shoes = els.map((el) => {
+            let item = el.querySelector(
+              ".product-block.product-resize.site-animation.fixheight"
+            );
+            let imgcard = {};
+            let src1 = item
+              .querySelectorAll(".product-img a picture")[0]
+              .querySelector("img").src;
+            let src2 = item
+              .querySelectorAll(".product-img a picture")[1]
+              .querySelector("img").src;
+            let href_ =  item
+            .querySelector(".product-img a").href
+            imgcard = {
+              src1: src1,
+              src2: src2,
+              href: href_,
+            };
+            let soldout =
+              item.querySelector(".sold-out") === null
+                ? null
+                : item.querySelector(".product-img .sold-out span").innerText;
 
-//       const result = {};
+            let title = {
+              content: item.querySelector(
+                ".product-detail.clearfix .box-pro-detail h3 a"
+              ).innerText,
+              href: item.querySelector(
+                ".product-detail.clearfix .box-pro-detail h3 a"
+              ).href.replace('https://thewolf.vn/',''),
+            };
 
-//       const data = await newPage.$$eval(
-//         ".row.prd1-right-items > .col-xs-6.col-sm-6.col-md-4.col-lg-4.item",
-//         (els) => {
-//           data = els.map((el) => {
-//             let href = el.querySelector(".thumbnail .cont-item a").href;
-//             let type = el.querySelector(".thumbnail .caption .type")
-//               ? el.querySelector(".thumbnail .caption .type").innerText
-//               : "";
+            let buyinstallment =
+              item.querySelector(
+                ".product-detail.clearfix .box-pro-detail .buy-installment"
+              ) !== null
+                ? {
+                    app: item.querySelector(
+                      ".product-detail.clearfix .box-pro-detail .buy-installment span b"
+                    ).innerText,
+                    content: item
+                      .querySelector(
+                        ".product-detail.clearfix .box-pro-detail .buy-installment span"
+                      )
+                      .innerText.replace(
+                        item.querySelector(
+                          ".product-detail.clearfix .box-pro-detail .buy-installment span b"
+                        ).innerText,
+                        ""
+                      )
+                      .replace("\n", ""),
+                  }
+                : null;
+            return {
+              imgcard: imgcard,
+              soldout: soldout,
+              title: title,
+              buyinstallment: buyinstallment,
+            };
+          });
+          return shoes;
+        }
+      );
 
-//             let name = el
-//               .querySelector(".thumbnail .caption .name ")
-//               .innerText.replace(/\n/g, "")
-//               .trim();
+      await newPage.close();
+      res(shoes);
+    } catch (error) {
+      console.log("loi o scraper shoes " + error);
+    }
+  });
 
-//             let soldout = el.querySelector(
-//               ".thumbnail .cont-item .soldout-text"
-//             )
-//               ? true
-//               : false;
-//             let color = el.querySelector(
-//               ".thumbnail .caption .color"
-//             ).innerText;
-//             if (el.querySelector(".thumbnail .cont-item .tag-blue"))
-//               type = el.querySelector(
-//                 ".thumbnail .cont-item .tag-blue"
-//               ).innerText;
-//             return {
-//               soldout: soldout,
-//               href: href,
-//               type: type,
-//               name: name,
-//               color: color,
-//             };
-//           });
-//           return data;
-//         }
-//       );
-
-//       await newPage.close();
-//       //await browser.close();
-//       res(data);
-//     } catch (error) {
-//       console.log("loi o scraper shoes " + error);
-//     }
-//   });
-
-// module.exports = scraper_Shoes;
+module.exports = scraper_Shoes;

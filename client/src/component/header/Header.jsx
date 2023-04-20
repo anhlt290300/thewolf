@@ -21,7 +21,7 @@ const Header = () => {
     }
   }, [flag]);
   return (
-    <header id="header" className=" tablet:fixed block top-0 left-0 z-[999] w-full">
+    <header id="header" className=" tablet:fixed block top-0 left-0 z-[999] w-full bg-white">
       <div className=" desktop:p-[10px] py-[10px] tablet:px-[15px] px-[12px] flex w-full select-none">
         <div className=" flex-1 desktop:block hidden" />
         <div className="">

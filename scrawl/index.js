@@ -21,8 +21,8 @@ app.use(express.json());
 
 app.get("/a", async (req, res) => {
   const browser = startBrowser();
-  const url = 'https://ananas.vn/product-list/'
-  const data = await controller.scraperController_Filter(browser, url);
+  //const url = 'https://thewolf.vn/collections/shoes-for-decor'
+  const data = await controller.scraperController_Shoes(browser);
   res.status(200).json(data);
 });
 

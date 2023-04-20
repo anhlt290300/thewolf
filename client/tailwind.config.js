@@ -15,6 +15,8 @@ module.exports = {
         "black-primary": "#252a2b",
         "hover-a": "#e00000",
         'borderColor': "#5c5c5",
+        'reddiscount':'#f94c43',
+        'bluebold':'#3e00fe'
       },
       keyframes: {
         arrowRotate: {
