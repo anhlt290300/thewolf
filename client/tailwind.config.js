@@ -2,6 +2,14 @@ module.exports = {
   mode: "jit",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    listStyleType: {
+      none: "none",
+      disc: "disc",
+      decimal: "decimal",
+      square: "square",
+      circle:'circle',
+      roman: "upper-roman",
+    },
     screens: {
       "mobile-S": "320px",
       "mobile-M": "375px",
@@ -15,8 +23,8 @@ module.exports = {
         "black-primary": "#252a2b",
         "hover-a": "#e00000",
         'borderColor': "#5c5c5",
-        'reddiscount':'#f94c43',
-        'bluebold':'#3e00fe'
+        'reddiscount': "#f94c43",
+        'bluebold': "#3e00fe",
       },
       keyframes: {
         arrowRotate: {
@@ -24,12 +32,12 @@ module.exports = {
           "100%": { transform: "rotate(180deg)" },
         },
       },
-      animation:{
-        arrowRotate: 'arrowRotate 0.3s ease-in-out 1'
+      animation: {
+        arrowRotate: "arrowRotate 0.3s ease-in-out 1",
       },
-      transitionTimingFunction:{
-        'easy_': 'cubic-bezier(0.25, 0.46, 0.45, 0.94)',
-      }
+      transitionTimingFunction: {
+        easy_: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+      },
     },
     fontFamily: {
       primary: ["Be Vietnam Pro", "sans-serif"],

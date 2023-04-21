@@ -12,8 +12,9 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import ScrollTop from "./component/ScrollTop";
-import { getProductsByType } from "./assets/fakeData/products";
+import { getProductsByHref, getProductsByType } from "./assets/fakeData/products";
 import Collection from "./pages/Collection";
+import Product from "./pages/Product";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -72,12 +73,20 @@ const router = createBrowserRouter(
         element={<Collection />}
         errorElement={<ErrorPage />}
       />
-      {/* <Route path="/product-list" element={<ProductsPage />} />      
-      <Route path="/your-cart/" element={<Cart />} />
-      <Route path="/promotion/clearance-sale/" element={<Promotion />} />
-      <Route path="/discoveryou/" element={<Discoveryou />} />
-      <Route path="/coming-soon/" element={<ComingSoon />} />
-      <Route path="/your-wishlist/" element={<Wishlist />} /> */}
+      <Route
+        path="/products/:type"
+        loader={({ params }) => {
+          let href = "/products/" + params.type;
+
+          let item = getProductsByHref(href);
+          //console.log(href);
+          if (item.length === 0) {
+            throw new Response("Bad Request", { status: 400 });
+          } else return item[0];
+        }}
+        element={<Product />}
+        errorElement={<ErrorPage />}
+      />
     </Route>
   )
 );

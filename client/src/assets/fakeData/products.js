@@ -7104,4 +7104,9 @@ const getProductsByType = (type) => {
   return shuffle(resuls);
 };
 
-export { getProductsByType };
+const getProductsByHref = (href) => {
+  let resuls = products.filter((el) => el.imgcard.href === href);
+  return resuls;
+};
+
+export { getProductsByType, getProductsByHref };
