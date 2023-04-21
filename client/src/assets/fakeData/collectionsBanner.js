@@ -36,6 +36,10 @@ export const collectionBannerData = [
     src: "https://file.hstatic.net/200000033444/file/hazness_boots_004b7e7da8094d019700866a9456000f.jpg  ",
   },
   {
+    type: "giay-nu",
+    src: "https://file.hstatic.net/200000033444/file/chuyen_muc_nu_e9a23d0e6c7e4bc7983f3fe9efd21da8.jpg",
+  },
+  {
     type: "chelsea-boot-nu",
     src: "https://file.hstatic.net/200000033444/file/chelsea_15bb3cf92baa4b379785749e8425ddce.jpg",
   },
@@ -78,6 +82,10 @@ export const collectionBannerData = [
   },
   {
     type: "clearance-sale-60",
+    src: "https://file.hstatic.net/200000033444/file/loafer_4712a3a65ea94de4a0e003a596de8da1.jpg",
+  },
+  {
+    type: "phu-kien",
     src: "https://file.hstatic.net/200000033444/file/loafer_4712a3a65ea94de4a0e003a596de8da1.jpg",
   },
   {

@@ -60,10 +60,12 @@ const router = createBrowserRouter(
       <Route
         path="/collections/:type"
         loader={({ params }) => {
-          let type = params.type;
-          let item =
-            getProductsByType(type)
-          if (item === undefined) {
+          let param = params.type;
+
+          let type = param.slice(param.indexOf("?") + 1);
+          let item = getProductsByType(type);
+          //console.log(type);
+          if (item.length === 0) {
             throw new Response("Bad Request", { status: 400 });
           } else return item;
         }}

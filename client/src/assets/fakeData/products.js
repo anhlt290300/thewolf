@@ -7049,9 +7049,59 @@ const products = [
     sizes: '<option value="40">40</option>',
   },
 ];
+
+const shuffle = (arr) => {
+  return [...arr].sort(() => Math.random() - 0.5);
+};
+
 const getProductsByType = (type) => {
-  let resuls = products.filter((el) => el.type === type);
-  return resuls;
+  let resuls;
+  if (type === "giay-nam-the-wolf") {
+    resuls = products.filter(
+      (el) =>
+        el.type === "chelsea-boot-nam" ||
+        el.type === "derby-nam" ||
+        el.type === "giay-loafer-nam" ||
+        el.type === "giay-slipper-nam" ||
+        el.type === "harness-boot-nam" ||
+        el.type === "combat-boot-nam" ||
+        el.type === "oxford-nam" ||
+        el.type === "thewolf-slide-sandal"
+    );
+  } else if (type === "giay-nu") {
+    resuls = products.filter(
+      (el) =>
+        el.type === "chelsea-boot-nu" ||
+        el.type === "combat-boot-nu" ||
+        el.type === "derby-nu" ||
+        el.type === "giay-loafer-nu" ||
+        el.type === "giay-slipper-nu" ||
+        el.type === "the-lady-wolf-slide-sandal"
+    );
+  } else if (type === "phu-kien") {
+    resuls = products.filter(
+      (el) => el.type === "the-sean-wolf-belts" || el.type === "sock"
+    );
+  } else if (type === "the-wolf-tote-bag") {
+    resuls = products.filter(
+      (el) =>
+        el.type === "the-amano-totebag" ||
+        el.type === "the-s-wolf-tote-bag-collection"
+    );
+  } else if (type === "clearance-sale-25") {
+    resuls = products.filter((el) => el.discount === "-25%");
+  } else if (type === "clearance-sale-30") {
+    resuls = products.filter((el) => el.discount === "-30%");
+  } else if (type === "clearance-sale-40") {
+    resuls = products.filter((el) => el.discount === "-40%");
+  } else if (type === "clearance-sale-50") {
+    resuls = products.filter((el) => el.discount === "-50%");
+  } else if (type === "clearance-sale-60") {
+    resuls = products.filter((el) => el.discount === "-60%");
+  } else {
+    resuls = products.filter((el) => el.type === type);
+  }
+  return shuffle(resuls);
 };
 
 export { getProductsByType };

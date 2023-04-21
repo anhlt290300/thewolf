@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 const CollectionBanner = () => {
   const type = useParams().type;
   const banner = getBannerForType(type)[0];
-  console.log(banner);
+  //console.log(banner);
   return (
     <section>
       <div className="w-full">

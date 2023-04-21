@@ -3,7 +3,7 @@ import { burgeroption } from "../assets/fakeData/headerData";
 const Footer = () => {
   return (
     <footer>
-      <div className=" tablet:pt-[40px] tablet:pb-[30px] py-[20px] select-none">
+      <div className=" tablet:pt-[40px] tablet:pb-[30px] py-[20px] select-none border-t-[1px] border-solid border-[#e7e7e7]">
         <div className="px-[30px] grid desktop:grid-cols-7 tablet:grid-cols-2 grid-cols-1 desktop-L:gap-12 desktop:gap-12 tablet:gap-4">
           <div className=" tablet:mb-[20px] tablet:py-0 desktop:col-span-3 tablet:border-none border-b-[1px] border-[#efefef]">
             <div className=" tablet:hidden flex justify-center items-center">
