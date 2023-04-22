@@ -43,7 +43,7 @@ const ProductBuy = ({ product }) => {
       </div>
       {product.buyinstallment && (
         <div>
-          <span className="mt-[5px] flex items-center justify-start tablet:text-[13px] text-[12 px] font-bold">
+          <span className="mt-[5px] flex items-center justify-start tablet:text-[13px] text-[12px] font-bold">
             {product.buyinstallment.content}
             <b className="ml-[5px] text-[#3e00fe]">
               {product.buyinstallment.app}
