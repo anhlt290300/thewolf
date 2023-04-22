@@ -14,8 +14,8 @@ const ProductDescription = ({ product }) => {
     ref.classList.toggle("open");
   };
   return (
-    <div className="px-[15px] col-span-3 select-none">
-      <div className=" pb-[10px]">
+    <div className="px-[15px] col-span-3 select-none tablet:order-none order-last">
+      <div className=" pb-[10px] tablet:block hidden">
         <p className=" font-bold text-[13px] mb-[5px] text-black-primary">
           {product.title.content}
         </p>
@@ -23,7 +23,7 @@ const ProductDescription = ({ product }) => {
           {product.code}
         </span>
         {product.soldout && (
-          <span className=" text-sm text-black-primary leading-[1.4] ml-[5px]">
+          <span className=" text-sm text-black-primary leading-[1.4] ml-[5px]"> 
             {product.soldout}
           </span>
         )}

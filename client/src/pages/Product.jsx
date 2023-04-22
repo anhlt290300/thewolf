@@ -13,7 +13,7 @@ const Product = () => {
       <BreadCrumb />
       <section>
         <div className="py-[30px] w-full">
-          <div className=" desktop:grid desktop:grid-cols-12 w-full">
+          <div className=" desktop:grid desktop:grid-cols-12 flex flex-col w-full">
             <ProductDescription product={product} />
             <ProductGallery product={product} />
             <ProductBuy product={product} />
