@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import HeaderBottom from "./HeaderBottom";
-import HeaderBottomBurger from "./HeaderBottomBurger";
 import { toggleBurger } from "../../redux/slice/BurgerSlice";
 import { toggleMark } from "../../redux/slice/MarkSlice";
+import { toggleBoxCart } from "../../redux/slice/BoxCartSlice";
 const Header = () => {
   const dispatch = useDispatch();
   const flag = useSelector((state) => state.burger.flag);
@@ -14,6 +14,11 @@ const Header = () => {
     dispatch(toggleBurger());
     dispatch(toggleMark());
   };
+
+  const toggleCart = () =>{
+    dispatch(toggleBoxCart())
+    dispatch(toggleMark())
+  }
 
   useEffect(() => {
     if (!flag) {
@@ -33,19 +38,16 @@ const Header = () => {
       ) {
         headerRef.current.classList.add("fixed");
         headerRef.current.classList.add("translate-y-full");
+        toolRef.current.classList.add("desktop:text-black");
+        toolRef.current.classList.remove("desktop:text-white");
       } else {
         headerRef.current.classList.remove("fixed");
         headerRef.current.classList.remove("translate-y-full");
+        toolRef.current.classList.remove("desktop:text-black");
+        toolRef.current.classList.add("desktop:text-white");
       }
 
-      if (
-        document.body.scrollTop > 50 ||
-        document.documentElement.scrollTop > 50
-      ) {
-        toolRef.current.classList.add("desktop:text-black");
-      } else {
-        toolRef.current.classList.remove("desktop:text-black");
-      }
+     
     });
     return () => {
       window.removeEventListener("scroll");
@@ -105,20 +107,18 @@ const Header = () => {
                 </svg>
               </a>
             </span>
-            <span className=" relative tablet:px-2 px-1">
-              <a href="/cart">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  fill="currentColor"
-                  className="bi bi-bag "
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
-                </svg>
-              </a>
-              <span className=" absolute text-xs top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%-2px)]">
+            <span onClick={()=>toggleCart()} className=" relative tablet:px-2 px-1 group/cart cursor-pointer">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                className="bi bi-bag "
+                viewBox="0 0 16 16"
+              >
+                <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+              </svg>
+              <span className=" absolute text-xs top-1/2 left-1/2 -translate-x-1/2 group-hover/cart:text-hover-a -translate-y-[calc(50%-2px)] group-hover/cart:animate-scrollOut">
                 12
               </span>
             </span>
@@ -139,7 +139,6 @@ const Header = () => {
           </div>
         </div>
         <HeaderBottom />
-        <HeaderBottomBurger />
       </div>
     </header>
   );

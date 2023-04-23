@@ -2,10 +2,12 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMark } from "../redux/slice/MarkSlice";
 import { unableBurger } from "../redux/slice/BurgerSlice";
+import { unableBoxCart } from "../redux/slice/BoxCartSlice";
 
 const Mark = () => {
   const dispatch = useDispatch();
   const flag = useSelector((state) => state.mark.flag);
+  const flagCartBox = useSelector(state=>state.cartbox.flag)
   const markRef = useRef(null);
   useEffect(() => {
     if (flag) {
@@ -30,6 +32,7 @@ const Mark = () => {
       onClick={() => {
         dispatch(toggleMark());
         dispatch(unableBurger());
+        dispatch(unableBoxCart())
       }}
     />
   );

@@ -31,9 +31,17 @@ module.exports = {
           "0%": { transform: "rotate(-48deg)" },
           "100%": { transform: "rotate(180deg)" },
         },
+        scrollOut : {
+          '0%':{top: '15px'},
+          '49%':{top: '30px'},
+          '50%':{top: '50%'},
+          '55%':{top:'-5px'},
+          '100%':{top: '20px'}
+        }
       },
       animation: {
         arrowRotate: "arrowRotate 0.3s ease-in-out 1",
+        scrollOut: 'scrollOut 0.3s ease-in-out 1'
       },
       transitionTimingFunction: {
         easy_: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",

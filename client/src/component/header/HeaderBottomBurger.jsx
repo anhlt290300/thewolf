@@ -8,13 +8,13 @@ const HeaderBottomBurger = () => {
   const flag = useSelector((state) => state.burger.flag);
   const burgerRef = useRef(null);
   useEffect(() => {
-    // if (flag) {
-    //   burgerRef.current.classList.remove("translate-x-full");
-    //   burgerRef.current.classList.add("translate-x-0");
-    // } else {
-    //   burgerRef.current.classList.add("translate-x-full");
-    //   burgerRef.current.classList.remove("translate-x-0");
-    // }
+    if (flag) {
+      burgerRef.current.classList.remove("translate-x-full");
+      burgerRef.current.classList.add("translate-x-0");
+    } else {
+      burgerRef.current.classList.add("translate-x-full");
+      burgerRef.current.classList.remove("translate-x-0");
+    }
   }, [flag]);
 
   const optionsRef = useRef([]);

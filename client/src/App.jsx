@@ -4,6 +4,7 @@ import Mark from "./component/Mark";
 import { useSelector } from "react-redux";
 import Footer from "./component/Footer";
 import ErrorPage from "./component/ErrorPage";
+import HeaderBottomBurger from "./component/header/HeaderBottomBurger";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -12,9 +13,13 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import ScrollTop from "./component/ScrollTop";
-import { getProductsByHref, getProductsByType } from "./assets/fakeData/products";
+import {
+  getProductsByHref,
+  getProductsByType,
+} from "./assets/fakeData/products";
 import Collection from "./pages/Collection";
 import Product from "./pages/Product";
+import CartBox from "./component/cart/CartBox";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -40,6 +45,8 @@ const App = () => {
           <Mark />
         </div>
       </div>
+      <HeaderBottomBurger />
+      <CartBox/>
     </div>
   );
 };
