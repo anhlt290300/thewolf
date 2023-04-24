@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
 import parse from "html-react-parser";
+import { addItem } from "../../redux/slice/cartSlice";
+import { useDispatch } from "react-redux";
+import { toggleBoxCart } from "../../redux/slice/BoxCartSlice";
+import { toggleMark } from "../../redux/slice/MarkSlice";
+import Quantity from "../cart/Quantity";
 
 const ProductBuy = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
+  const sizeRef = useRef(null);
 
+  const dispatch = useDispatch();
   const toggleQuantity = (key) => {
     if (key === "add") {
       setQuantity((quantity) => quantity + 1);
@@ -13,6 +20,7 @@ const ProductBuy = ({ product }) => {
       else setQuantity((quantity) => quantity - 1);
     }
   };
+
   return (
     <div className=" col-span-3 px-[15px] select-none">
       <div className=" desktop:sticky top-[60%] desktop:-translate-y-1/2 left-0 w-full">
@@ -29,7 +37,7 @@ const ProductBuy = ({ product }) => {
             </span>
           )}
         </div>
-        <div className=" desktop:pl-[10px] pb-[10px] border-b-[1px] border-[#dfe0e1] border-dotted">
+        <div className=" desktop:pr-[10px] pb-[10px] border-b-[1px] border-[#dfe0e1] border-dotted">
           <span className="py-[5px] px-[15px] bg-[#ededed] text-hover-a font-semibold text-xs inline-block mr-[10px]">
             {product.discount}
           </span>
@@ -53,6 +61,7 @@ const ProductBuy = ({ product }) => {
                 className=" inline-block text-[#0657a] ml-[5px]"
                 href="https://fundiin.vn/ecompopup/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Tìm hiểu(?)
               </a>
@@ -78,7 +87,8 @@ const ProductBuy = ({ product }) => {
             <span className="block h-[35px] align-middle overflow-hidden max-w-full">
               <select
                 name=""
-                id=""
+                id="abc"
+                ref={(el) => (sizeRef.current = el)}
                 className="w-full h-full border-[1px] border-solid border-[#333] outline-none text-[11px]"
               >
                 {parse(`${product.sizes}`)}
@@ -93,47 +103,7 @@ const ProductBuy = ({ product }) => {
             </button>
           </div>
         </div>
-        <div className="mt-[15px]">
-          <div className="mb-[15px] flex items-center">
-            <button
-              onClick={() => toggleQuantity("minus")}
-              className="w-[32px] h-[32px] bg-[#f5f5f5] font-semibold text-center flex justify-center items-center"
-            >
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-dash"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
-                </svg>
-              </span>
-            </button>
-            <div className="w-[70px] h-[32px] font-semibold flex justify-center items-center border-[1px] border-[#f5f5f5] border-solid rounded-[1px]">
-              <span>{quantity}</span>
-            </div>
-            <button
-              onClick={() => toggleQuantity("add")}
-              className="w-[32px] h-[32px] bg-[#f5f5f5] font-semibold text-center flex justify-center items-center"
-            >
-              <span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  fill="currentColor"
-                  className="bi bi-plus"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-                </svg>
-              </span>
-            </button>
-          </div>
-        </div>
+        <Quantity quantity={quantity} toggleQuantity={toggleQuantity} type="product" />
         <div
           className={
             product.soldout !== "Hết hàng"
@@ -141,7 +111,26 @@ const ProductBuy = ({ product }) => {
               : "group/soldout open"
           }
         >
-          <button className="px-[35px] py-[8px] desktop:w-fit tablet:w-1/2 text-[11px] font-bold uppercase text-white group-[.open]/soldout:opacity-80 hover:text-black-primary leading-[22px] border-[1px] border-solid border-white hover:border-black-primary bg-black-primary hover:bg-white">
+          <button
+            onClick={
+              product.soldout !== "Hết hàng"
+                ? () => {
+                    dispatch(
+                      addItem({
+                        id: product.code,
+                        size: sizeRef.current?.options[
+                          sizeRef.current.selectedIndex
+                        ].value,
+                        quantity: quantity,
+                      })
+                    );
+                    dispatch(toggleBoxCart());
+                    dispatch(toggleMark());
+                  }
+                : () => {}
+            }
+            className="px-[35px] py-[8px] desktop:w-fit tablet:w-1/2 text-[11px] font-bold uppercase text-white group-[.open]/soldout:opacity-80 hover:text-black-primary leading-[22px] border-[1px] border-solid border-white hover:border-black-primary bg-black-primary hover:bg-white"
+          >
             {product.soldout !== "Hết hàng" ? "Thêm vào giỏ" : product.soldout}
           </button>
         </div>

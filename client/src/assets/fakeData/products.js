@@ -7098,6 +7098,8 @@ const getProductsByType = (type) => {
     resuls = products.filter((el) => el.discount === "-50%");
   } else if (type === "clearance-sale-60") {
     resuls = products.filter((el) => el.discount === "-60%");
+  } else if (type === "all") {
+    resuls = products;
   } else {
     resuls = products.filter((el) => el.type === type);
   }
@@ -7109,4 +7111,9 @@ const getProductsByHref = (href) => {
   return resuls;
 };
 
-export { getProductsByType, getProductsByHref };
+const getProductsById = (id) => {
+  let result = products.find((el) => el.code === id);
+  return result;
+};
+
+export { getProductsByType, getProductsByHref, getProductsById };

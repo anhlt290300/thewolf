@@ -1,5 +1,9 @@
 export const collectionBannerData = [
   {
+    type: "all",
+    src: "https://file.hstatic.net/200000033444/file/trang_chuyen_muc_nam_79e3d59dca4c43b8869e284004edae08.jpg",
+  },
+  {
     type: "giay-nam-the-wolf",
     src: "https://file.hstatic.net/200000033444/file/trang_chuyen_muc_nam_79e3d59dca4c43b8869e284004edae08.jpg",
   },

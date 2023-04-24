@@ -49,8 +49,8 @@ const ProductGallery = ({ product }) => {
             width="100%"
             className=" tablet:h-[50vw] h-[55vw]"
             src="https://www.youtube.com/embed/i8Iux8vgqV4?autoplay=1&controls=0&modestbranding=0&rel=0&loop=1&playlist=i8Iux8vgqV4&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fthewolf.vn&widgetid=1"
-            frameborder="0"
-            allowfullscreen="1"
+            frameBorder="0"
+            allowFullScreen="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             title="UNBOXING THE CHUNKY CHELSEA BOOT BLACK | THEWOLF.VN"
           ></iframe>

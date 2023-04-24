@@ -6,25 +6,17 @@ const setup = () => {
       ? JSON.parse(localStorage.getItem("cart-thewolf"))
       : [];
 
-  //   const listdelete = JSON.parse(localStorage.getItem("listdelete"))
-  //     ? JSON.parse(localStorage.getItem("listdelete"))
-  //     : [];
+  let cartlength = 0;
 
-  //   listdelete.forEach((element) => {
-  //     cart = cart.filter(
-  //       (el) =>
-  //         el.id !== element.id ||
-  //         (el.id === element.id && el.size !== element.size)
-  //     );
-  //   });
+  cart.forEach((el) => (cartlength += el.quantity));
 
-  //   localStorage.setItem("listdelete", JSON.stringify([]));
-  //   localStorage.setItem("cart", JSON.stringify(cart));
-
-  return cart;
+  return {
+    cart: cart,
+    cartlength: cartlength,
+  };
 };
 
-const initialState = { cart: setup() };
+const initialState = setup();
 
 export const cartSlice = createSlice({
   name: "cart",
@@ -32,7 +24,9 @@ export const cartSlice = createSlice({
   reducers: {
     addItem: (state, action) => {
       let item = action.payload;
-
+      let length = state.cartlength;
+      length += item.quantity;
+      state.cartlength = length;
       if (state.cart.some((el) => el.id === item.id && el.size === item.size)) {
         //console.log("vao");
         let result = state.cart.map((el) => {
@@ -48,8 +42,34 @@ export const cartSlice = createSlice({
         localStorage.setItem("cart-thewolf", JSON.stringify(state.cart));
       }
     },
+    updateItem: (state, action) => {
+      let { id, quantity } = action.payload;
+      let length = state.cartlength;
+      let result = state.cart.map((el) => {
+        if (el.id === id) {
+          length = length - el.quantity + quantity;
+          el.quantity = quantity;
+          return el;
+        } else return el;
+      });
+      state.cart = [...result];
+      state.cartlength = length;
+      localStorage.setItem("cart-thewolf", JSON.stringify(state.cart));
+    },
+    deleteItem: (state, action) => {
+      let id = action.payload;
+      let result = [];
+      let length = state.cartlength;
+      state.cart.forEach((element) => {
+        if (element.id !== id) result.push(element);
+        else length -= element.quantity;
+      });
+      state.cart = [...result];
+      state.cartlength = length;
+      localStorage.setItem("cart-thewolf", JSON.stringify(state.cart));
+    },
   },
 });
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, updateItem, deleteItem } = cartSlice.actions;
 export default cartSlice.reducer;

@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 const BreadCrumb = () => {
-  const type = useParams().type.replaceAll("-", " ").toUpperCase();
+  const type = useParams().type?.replaceAll("-", " ").toUpperCase();
   // const top = useLocation().pathname.slice(
   //   1,
   //   useLocation().pathname.lastIndexOf("/")

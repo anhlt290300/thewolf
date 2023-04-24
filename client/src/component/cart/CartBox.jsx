@@ -2,11 +2,15 @@ import React, { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleBoxCart } from "../../redux/slice/BoxCartSlice";
 import { toggleMark } from "../../redux/slice/MarkSlice";
+import { getTotal } from "../../utils/getTotal";
+import ProductCartBox from "./ProductCartBox";
 const CartBox = () => {
   const dispatch = useDispatch();
+
   const flag = useSelector((state) => state.cartbox.flag);
   const cartRef = useRef(null);
   const cartArr = useSelector((state) => state.cart.cart);
+  const total = getTotal(cartArr);
   useEffect(() => {
     if (flag) {
       cartRef.current.classList.remove("translate-x-full");
@@ -21,7 +25,7 @@ const CartBox = () => {
     <div
       id="cart-box"
       ref={(el) => (cartRef.current = el)}
-      className=" tablet:w-[480px] w-[320px] h-screen bg-white fixed top-0 translate-x-full right-0 z-[999] transition-all duration-500 ease-easy_  text-sm select-none"
+      className=" tablet:w-[510px] overflow-hidden w-[320px] h-screen bg-white fixed top-0 translate-x-full desktop-L:-right-[30px] right-0 z-[999] transition-all duration-500 ease-easy_  text-sm select-none"
     >
       <div className=" overflow-y-scroll w-full relative h-full">
         <div
@@ -30,6 +34,22 @@ const CartBox = () => {
         >
           <p className=" font-medium">GIỎ HÀNG</p>
           <div className="mt-[60px]">
+            <div className=" bg-transparent w-full">
+              {cartArr.map((item, index) => {
+                return (
+                  <div
+                    className=" border-b-[1px] border-[#bcbcbc] border-dotted last:border-none"
+                    key={index}
+                  >
+                    <ProductCartBox
+                      product_id={item.id}
+                      size={item.size}
+                      quantity={item.quantity}
+                    />
+                  </div>
+                );
+              })}
+            </div>
             {cartArr.length === 0 && (
               <p className="py-[25px]">Hiện chưa có sản phẩm</p>
             )}
@@ -40,7 +60,7 @@ const CartBox = () => {
                   <p>TỔNG TIỀN:</p>
                 </div>
                 <div className="py-[10px] pl-[10px] text-end">
-                  <p>0₫</p>
+                  <p>{total}</p>
                 </div>
               </div>
             </div>

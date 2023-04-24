@@ -20,6 +20,7 @@ import {
 import Collection from "./pages/Collection";
 import Product from "./pages/Product";
 import CartBox from "./component/cart/CartBox";
+import Cart from "./pages/Cart";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -46,7 +47,7 @@ const App = () => {
         </div>
       </div>
       <HeaderBottomBurger />
-      <CartBox/>
+      <CartBox />
     </div>
   );
 };
@@ -94,6 +95,7 @@ const router = createBrowserRouter(
         element={<Product />}
         errorElement={<ErrorPage />}
       />
+      <Route path="/cart/" element={<Cart />} />
     </Route>
   )
 );
