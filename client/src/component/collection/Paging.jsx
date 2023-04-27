@@ -9,7 +9,7 @@ const Paging = ({ currentpage, lastpage, url }) => {
         <div className="py-[30px] flex items-center justify-center text-[15px] font-semibold text-black-primary">
           {currentpage > 1 && (
             <a
-              href={`${url}?page=${currentpage + 1}`}
+              href={`${url}page=${currentpage + 1}`}
               className=" inline-block mr-[30px]"
             >
               <svg
@@ -38,7 +38,7 @@ const Paging = ({ currentpage, lastpage, url }) => {
               return (
                 <a
                   key={index}
-                  href={`${url}?page=${item}`}
+                  href={`${url}page=${item}`}
                   className=" inline-block px-[8px] opacity-40"
                 >
                   <span>{item}</span>
@@ -48,7 +48,7 @@ const Paging = ({ currentpage, lastpage, url }) => {
           })}
           {currentpage < lastpage && (
             <a
-              href={`${url}?page=${currentpage - 1}`}
+              href={`${url}page=${currentpage - 1}`}
               className=" inline-block ml-[30px]"
             >
               <svg

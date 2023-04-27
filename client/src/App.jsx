@@ -21,6 +21,8 @@ import Collection from "./pages/Collection";
 import Product from "./pages/Product";
 import CartBox from "./component/cart/CartBox";
 import Cart from "./pages/Cart";
+import SearchBox from "./component/search/SearchBox";
+import Search from "./pages/Search";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -48,6 +50,7 @@ const App = () => {
       </div>
       <HeaderBottomBurger />
       <CartBox />
+      <SearchBox />
     </div>
   );
 };
@@ -93,6 +96,31 @@ const router = createBrowserRouter(
           } else return item[0];
         }}
         element={<Product />}
+        errorElement={<ErrorPage />}
+      />
+      <Route
+        path="/search"
+        loader={({ request }) => {
+          //let dispatch = useDispatch();
+          let search = new URL(request.url).search.replace("?", "");
+          if (search.indexOf("filter") === -1) {
+            console.log('a')
+            return null;
+          } else {
+            let arr = search.split('&')
+            let item
+            arr.forEach(el=>{
+              if(el.indexOf('filter')!==-1){
+                item = el.split('=')
+              }
+            })
+            if(item[1]===undefined)
+              return null
+            else
+              return item[1]
+          }
+        }}
+        element={<Search />}
         errorElement={<ErrorPage />}
       />
       <Route path="/cart/" element={<Cart />} />

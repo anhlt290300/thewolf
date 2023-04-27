@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toggleMark } from "../redux/slice/MarkSlice";
 import { unableBurger } from "../redux/slice/BurgerSlice";
 import { unableBoxCart } from "../redux/slice/BoxCartSlice";
+import { unableBoxSearch } from "../redux/slice/BoxSearchSlice";
 
 const Mark = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const Mark = () => {
         dispatch(toggleMark());
         dispatch(unableBurger());
         dispatch(unableBoxCart())
+        dispatch(unableBoxSearch())
       }}
     />
   );

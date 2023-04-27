@@ -8,7 +8,7 @@ const CollectionPaging = (props) => {
   const [curretnpage, setCurrentPage] = useState(1);
   const [lastpage, setLastPage] = useState(1);
   const products = useLoaderData();
-  const url = useLocation().pathname;
+  const url = useLocation().pathname + "?";
   const [productRender, setProductRender] = useState([]);
   useEffect(() => {
     let params = [];
@@ -47,7 +47,7 @@ const CollectionPaging = (props) => {
         return false;
       }
     });
-    setProductRender(arr)
+    setProductRender(arr);
   }, [curretnpage, lastpage, products]);
   return (
     <section>

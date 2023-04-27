@@ -4,22 +4,23 @@ import HeaderBottom from "./HeaderBottom";
 import { toggleBurger } from "../../redux/slice/BurgerSlice";
 import { toggleMark } from "../../redux/slice/MarkSlice";
 import { toggleBoxCart } from "../../redux/slice/BoxCartSlice";
+import { toggleBoxSearch } from "../../redux/slice/BoxSearchSlice";
 const Header = () => {
   const dispatch = useDispatch();
   const flag = useSelector((state) => state.burger.flag);
   const burgerRef = useRef(null);
   const headerRef = useRef(null);
   const toolRef = useRef(null);
-  const cartlength = useSelector(state=>state.cart.cartlength)
+  const cartlength = useSelector((state) => state.cart.cartlength);
   const toggleMenu = () => {
     dispatch(toggleBurger());
     dispatch(toggleMark());
   };
 
-  const toggleCart = () =>{
-    dispatch(toggleBoxCart())
-    dispatch(toggleMark())
-  }
+  const toggleCart = () => {
+    dispatch(toggleBoxCart());
+    dispatch(toggleMark());
+  };
 
   useEffect(() => {
     if (!flag) {
@@ -47,8 +48,6 @@ const Header = () => {
         toolRef.current.classList.remove("desktop:text-black");
         toolRef.current.classList.add("desktop:text-white");
       }
-
-     
     });
     return () => {
       window.removeEventListener("scroll");
@@ -74,10 +73,10 @@ const Header = () => {
           </div>
           <div
             ref={(el) => (toolRef.current = el)}
-            className=" flex-1 flex items-center justify-end desktop:text-white text-black"
+            className=" flex-1 flex items-center justify-end desktop:text-black text-black"
           >
             <span className="tablet:px-2 px-1">
-              <a href="/account">
+              <a href="/account" className=" hover:text-black">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -94,8 +93,14 @@ const Header = () => {
                 </svg>
               </a>
             </span>
-            <span className="tablet:px-2 px-1 tablet:block hidden">
-              <a href="/search">
+            <span
+              onClick={() => {
+                dispatch(toggleMark());
+                dispatch(toggleBoxSearch());
+              }}
+              className="tablet:px-2 px-1 tablet:block hidden cursor-pointer hover:rotate-12 transition-all duration-200 ease-linear"
+            >
+              <div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"
@@ -106,9 +111,12 @@ const Header = () => {
                 >
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                 </svg>
-              </a>
+              </div>
             </span>
-            <span onClick={()=>toggleCart()} className=" relative tablet:px-2 px-1 group/cart cursor-pointer">
+            <span
+              onClick={() => toggleCart()}
+              className=" relative tablet:px-2 px-1 group/cart cursor-pointer"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"

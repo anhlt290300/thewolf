@@ -7116,4 +7116,28 @@ const getProductsById = (id) => {
   return result;
 };
 
-export { getProductsByType, getProductsByHref, getProductsById };
+const getProductByKey = (key) => {
+  //console.log(key)
+  if (key === "") return [];
+  else {
+    let result = [];
+    products.forEach((el) => {
+      let title = el.title.content;
+      //let arr = title.replace("-", "").split(" ");
+      //console.log('THE MARS WOLF CHELSEA BOOT - BLACK'.search('BLACK'))
+      //console.log(key.toUpperCase())
+      if (title.search(key.toUpperCase()) !== -1) {
+        //console.log(title);
+        result.push(el);
+      }
+    });
+    return shuffle(result);
+  }
+};
+
+export {
+  getProductsByType,
+  getProductsByHref,
+  getProductsById,
+  getProductByKey,
+};
