@@ -3,21 +3,20 @@ import PropTypes from "prop-types";
 
 import { useSelector } from "react-redux";
 
-const SearchResult = ({ key_ }) => {
+const SearchResult = ({ key_, search_bar }) => {
   const product = useSelector((state) => state.search.data);
   //console.log(key_)
   const searchRef = useRef(null);
   useEffect(() => {
-    let time = setTimeout(() => {
-      searchRef.current.classList.remove("opacity-0");
-      searchRef.current.classList.add("opacity-100");
-    }, [200]);
-    return () => clearTimeout(time);
+    if(product.length !==0)
+      searchRef.current.classList.remove('opacity-0')
+    else
+      searchRef.current.classList.add('opacity-0')
   }, [product]);
   return (
     <div
       ref={(el) => (searchRef.current = el)}
-      className=" opacity-0 transition-all duration-300 ease-in"
+      className=" transition-all duration-300 ease-in absolute top-[calc(100%+5px)] left-0 w-full z-[999999]"
     >
       {product.map((item, index) => {
         return (
@@ -26,7 +25,7 @@ const SearchResult = ({ key_ }) => {
             className={
               index > 4
                 ? "hidden"
-                : "py-[10px] border-b-[1px] border-dotted border-[#dfe0e1] clear-both flex"
+                : "py-[10px] border-b-[1px] border-dotted border-[#dfe0e1] clear-both flex bg-white px-[5px]"
             }
           >
             <div className="w-[calc(100%-40px)] text-[14px] uppercase mr-[5px] font-medium leading-[20px]">
@@ -51,7 +50,7 @@ const SearchResult = ({ key_ }) => {
           </div>
         );
       })}
-      {product.length > 5 && (
+      {product.length > 5 && !search_bar && (
         <div className="w-full text-center">
           <a
             href={`/search?filter=${key_}`}
@@ -67,6 +66,7 @@ const SearchResult = ({ key_ }) => {
 
 SearchResult.propTypes = {
   key_: PropTypes.string.isRequired,
+  search_bar: PropTypes.bool.isRequired,
 };
 
 export default SearchResult;

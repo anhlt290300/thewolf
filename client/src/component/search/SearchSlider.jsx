@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { getProductByKey } from "../../assets/fakeData/products";
 import ProductCard from "../ProductCard";
 import { useLocation, useSearchParams } from "react-router-dom";
 import Paging from "../collection/Paging";
 
-const SearchSlider = ({ key_ }) => {
-  const products = getProductByKey(key_);
+const SearchSlider = ({ key_, products }) => {
   const searchParams = useSearchParams();
   const [currentpage, setCurrentPage] = useState(1);
   const [lastpage, setLastPage] = useState(1);
   const [productRender, setProductRender] = useState([]);
-  const url = useLocation().pathname + useLocation().search + "&";
-  console.log(url);
+  const url = useLocation().pathname + `?filter=${key_}&`;
+
   useEffect(() => {
     let params = [];
     searchParams[0].forEach((value, key) => {
@@ -54,7 +52,7 @@ const SearchSlider = ({ key_ }) => {
 
   return (
     <div>
-      <div className="grid grid-cols-5 gap-[30px]">
+      <div className="grid desktop:grid-cols-5 grid-cols-2 gap-[30px]">
         {productRender.map((item, index) => {
           return (
             <div key={index}>
@@ -70,6 +68,7 @@ const SearchSlider = ({ key_ }) => {
 
 SearchSlider.propTypes = {
   key_: PropTypes.string.isRequired,
+  products: PropTypes.array.isRequired,
 };
 
 export default SearchSlider;

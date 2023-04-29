@@ -4,12 +4,14 @@ import { toggleMark } from "../../redux/slice/MarkSlice";
 import { toggleBoxSearch } from "../../redux/slice/BoxSearchSlice";
 import { search } from "../../redux/slice/SearchSlice";
 import SearchResult from "./SearchResult";
+import { useNavigate } from "react-router-dom";
 
 const SearchBox = () => {
   const dispatch = useDispatch();
   const [key_, setKey_] = useState("");
   const flag = useSelector((state) => state.searchbox.flag);
   const searchRef = useRef(null);
+  const navigate = useNavigate();
   useEffect(() => {
     if (flag) {
       searchRef.current.classList.remove("translate-x-full");
@@ -17,9 +19,10 @@ const SearchBox = () => {
     } else {
       searchRef.current.classList.add("translate-x-full");
       searchRef.current.classList.remove("translate-x-0");
-      dispatch(search(''))
+      dispatch(search(""));
+      setKey_("");
     }
-  }, [flag,dispatch]);
+  }, [flag, dispatch]);
 
   useEffect(() => {
     dispatch(search(key_));
@@ -34,7 +37,7 @@ const SearchBox = () => {
       <div className=" overflow-y-scroll w-full relative h-full">
         <div
           className=" overflow-y-scroll h-full 
-        tablet:px-[70px] tablet:py-[60px] px-[15px] py-[40px] "
+        tablet:px-[70px] tablet:py-[60px] px-[15px] py-[40px] relative"
         >
           <p className=" font-medium tablet:ml-0 ml-[15px]">TÌM KIẾM</p>
           <div className="mt-[50px] mb-[8px] bg-[#f5f5f5] h-[55px] font-medium relative">
@@ -45,8 +48,17 @@ const SearchBox = () => {
               className=" pl-[20px] pr-[55px] inline-block h-full outline-none bg-transparent"
               placeholder="Tìm kiếm sản phẩm..."
               onChange={(el) => setKey_(el.target.value)}
+              onKeyDown={(el) => {
+                if (el.keyCode === 13) {
+                  navigate(`/search?filter=${key_}`);
+                  window.location.reload();
+                }
+              }}
             />
-            <div className="w-[55px] h-[55px] leading-[64px] absolute top-0 right-0 flex items-center justify-center cursor-pointer opacity-20">
+            <a
+              href={`/search?filter=${key_}`}
+              className=" w-[55px] h-[55px] leading-[64px] absolute top-0 right-0 flex items-center justify-center cursor-pointer opacity-20"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="25"
@@ -57,9 +69,9 @@ const SearchBox = () => {
               >
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
               </svg>
-            </div>
+            </a>
+            <SearchResult key_={key_} search_bar={false} />
           </div>
-          <SearchResult key_={key_} />
         </div>
 
         <button

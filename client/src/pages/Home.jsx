@@ -5,7 +5,7 @@ import HomeBanner from '../component/home/HomeBanner'
 import HomeInfomation from '../component/home/HomeInfomation'
 const Home = () => {
   return (
-    <div className=" -translate-y-[110px]">
+    <div className=" ">
       <Slider />
       <HomeCollection />
       <HomeBanner />

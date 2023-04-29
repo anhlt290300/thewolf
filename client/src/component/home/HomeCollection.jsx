@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { getProductsByType } from "../../assets/fakeData/products";
-import { Navigation } from "swiper";
 import "swiper/css";
-import "swiper/css/navigation";
 
 const HomeCollection = () => {
   const products = getProductsByType("the-sean-wolf-collection");
-
+  const swipertabletRef = useRef(null);
+  const swipermobileRef = useRef(null);
   return (
     <section>
       <div className="px-[15px] select-none">
@@ -22,8 +21,8 @@ const HomeCollection = () => {
           <Swiper
             slidesPerView={3}
             loop={true}
-            navigation
-            modules={[Navigation]}
+            onBeforeInit={(el) => (swipertabletRef.current = el)}
+            className=" relative"
           >
             {products.map((item, index) => {
               return (
@@ -55,7 +54,9 @@ const HomeCollection = () => {
                           <a href={item.title.href}>{item.title.content}</a>
                         </p>
                         <p className=" text-black-primary">
-                          <span className=" text-hover-a text-sm">{item.price.saleprice}</span>
+                          <span className=" text-hover-a text-sm">
+                            {item.price.saleprice}
+                          </span>
                           <span className=" text-[#939393] text-[12px] ml-[5px]">
                             <del>{item.price.realprice}</del>
                           </span>
@@ -76,6 +77,28 @@ const HomeCollection = () => {
                 </SwiperSlide>
               );
             })}
+            <div
+              onClick={() => swipertabletRef.current?.slidePrev()}
+              className=" absolute top-1/2 left-[10px] cursor-pointer z-[999] h-[22px] w-[15px] mt-[-22px]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
+                <path
+                  d="M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22L0,22L0,22z"
+                  fill="#007aff"
+                />
+              </svg>
+            </div>
+            <div
+              onClick={() => swipertabletRef.current?.slideNext()}
+              className=" absolute top-1/2 right-[10px] cursor-pointer z-[999] h-[22px] w-[15px] mt-[-22px]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
+                <path
+                  d="M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z"
+                  fill="#007aff"
+                />
+              </svg>
+            </div>
           </Swiper>
         </div>
         <div className=" tablet:hidden block">
@@ -83,8 +106,8 @@ const HomeCollection = () => {
             spaceBetween={5}
             slidesPerView={2}
             loop={true}
-            navigation
-            modules={[Navigation]}
+            onBeforeInit={(el) => (swipermobileRef.current = el)}
+            className=" relative"
           >
             {products.map((item, index) => {
               return (
@@ -139,6 +162,28 @@ const HomeCollection = () => {
                 </SwiperSlide>
               );
             })}
+            <div
+              onClick={() => swipermobileRef.current?.slidePrev()}
+              className=" absolute top-1/2 left-[10px] cursor-pointer z-[999] h-[22px] w-[15px] mobile-M:mt-[-22px] mt-[-30px]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
+                <path
+                  d="M0,22L22,0l2.1,2.1L4.2,22l19.9,19.9L22,44L0,22L0,22L0,22z"
+                  fill="#007aff"
+                />
+              </svg>
+            </div>
+            <div
+              onClick={() => swipermobileRef.current?.slideNext()}
+              className=" absolute top-1/2 right-[10px] cursor-pointer z-[999] h-[22px] w-[15px] mobile-M:mt-[-22px] mt-[-30px]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 44">
+                <path
+                  d="M27,22L27,22L5,44l-2.1-2.1L22.8,22L2.9,2.1L5,0L27,22L27,22z"
+                  fill="#007aff"
+                />
+              </svg>
+            </div>
           </Swiper>
         </div>
       </div>

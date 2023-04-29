@@ -35,15 +35,39 @@ const Paging = ({ currentpage, lastpage, url }) => {
                 </span>
               );
             else {
-              return (
-                <a
-                  key={index}
-                  href={`${url}page=${item}`}
-                  className=" inline-block px-[8px] opacity-40"
-                >
-                  <span>{item}</span>
-                </a>
-              );
+              if (
+                (item >= currentpage - 2 && item < currentpage) ||
+                (item > currentpage && item <= currentpage + 2)
+              )
+                return (
+                  <a
+                    key={index}
+                    href={`${url}page=${item}`}
+                    className=" inline-block px-[8px] opacity-40"
+                  >
+                    <span>{item}</span>
+                  </a>
+                );
+              else if (currentpage < lastpage - 2 && item === lastpage)
+                return (
+                  <a
+                    key={index}
+                    href={`${url}page=${item}`}
+                    className=" inline-block px-[8px] opacity-40"
+                  >
+                    <span>{item}</span>
+                  </a>
+                );
+              else if (currentpage < lastpage - 3 && item === lastpage - 1)
+                return (
+                  <span
+                    key={index}
+                    className=" inline-block px-[8px] opacity-40"
+                  >
+                    ...
+                  </span>
+                );
+              else return <div key={index}></div>;
             }
           })}
           {currentpage < lastpage && (

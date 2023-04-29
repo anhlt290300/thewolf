@@ -8,7 +8,7 @@ import "swiper/css/effect-fade";
 const Slider = () => {
   return (
     <div id="home-slider">
-      <div className=" tablet:block hidden">
+      <div className=" tablet:block hidden mt-[-80px]">
         <Swiper
           //effect={fade ? "fade" : ""}
           loop={true}
@@ -30,7 +30,7 @@ const Slider = () => {
           })}
         </Swiper>
       </div>
-      <div className=" tablet:hidden block">
+      <div className=" tablet:hidden block pt-[0px]">
         <Swiper
           //effect={fade ? "fade" : ""}
           loop={true}

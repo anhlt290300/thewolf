@@ -37,11 +37,16 @@ module.exports = {
           '50%':{top: '50%'},
           '55%':{top:'-5px'},
           '100%':{top: '20px'}
+        },
+        fade:{
+          '0%':{opacity:'0'},
+          '100%' :{opacity:'100'}
         }
       },
       animation: {
         arrowRotate: "arrowRotate 0.3s ease-in-out 1",
-        scrollOut: 'scrollOut 0.3s ease-in-out 1'
+        scrollOut: 'scrollOut 0.3s ease-in-out 1',
+        fade: 'fade 0.5s ease-in-out 1'
       },
       transitionTimingFunction: {
         easy_: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",

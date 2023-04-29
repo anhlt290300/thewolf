@@ -23,6 +23,7 @@ import CartBox from "./component/cart/CartBox";
 import Cart from "./pages/Cart";
 import SearchBox from "./component/search/SearchBox";
 import Search from "./pages/Search";
+import HeaderSearchBar from "./component/header/HeaderSearchBar";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -43,6 +44,7 @@ const App = () => {
       >
         <div className="transition-all duration-500 ease-easy_ tablet:group-[.open]/main:-translate-x-[480px] group-[.open]/main:-translate-x-[320px]">
           <Header />
+          <HeaderSearchBar/>
           <Outlet />
           <Footer />
           <Mark />
