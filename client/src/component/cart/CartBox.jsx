@@ -68,19 +68,19 @@ const CartBox = () => {
               <div className="grid grid-cols-2">
                 <a
                   href="/cart"
-                  className=" py-[19px] mr-[10px] px-[30px] whitespace-nowrap mt-[10px]
-                   border-[1px] border-solid border-white uppercase bg-black-primary text-white flex justify-center"
+                  className=" inline-block h-fit tablet:py-[19px] py-[8px] mr-[10px] tablet:px-[30px] px-[15px] whitespace-nowrap mt-[10px]
+                   border-[1px] border-solid border-white uppercase bg-black-primary text-white text-center tablet:text-[12px] text-[11px]"
                 >
                   {" "}
-                  <span className="">Xem giỏ hàng</span>
+                  Xem giỏ hàng
                 </a>
                 <a
                   href="/checkout"
-                  className=" py-[19px] ml-[10px] px-[30px] whitespace-nowrap mt-[10px]
-                   border-[1px] border-solid border-white uppercase bg-black-primary text-white flex justify-center"
+                  className="inline-block h-fit tablet:py-[19px] py-[8px] ml-[10px] tablet:px-[30px] px-[15px] whitespace-nowrap mt-[10px]
+                   border-[1px] border-solid border-white uppercase bg-black-primary text-white text-center tablet:text-[12px] text-[11px]"
                 >
                   {" "}
-                  <span>Thanh toán</span>
+                  Thanh toán
                 </a>
               </div>
             </div>
