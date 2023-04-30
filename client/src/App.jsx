@@ -10,6 +10,7 @@ import {
   createRoutesFromElements,
   Route,
   Outlet,
+  redirect,
 } from "react-router-dom";
 import Home from "./pages/Home";
 import ScrollTop from "./component/ScrollTop";
@@ -24,6 +25,8 @@ import Cart from "./pages/Cart";
 import SearchBox from "./component/search/SearchBox";
 import Search from "./pages/Search";
 import HeaderSearchBar from "./component/header/HeaderSearchBar";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -44,7 +47,7 @@ const App = () => {
       >
         <div className="transition-all duration-500 ease-easy_ tablet:group-[.open]/main:-translate-x-[480px] group-[.open]/main:-translate-x-[320px]">
           <Header />
-          <HeaderSearchBar/>
+          <HeaderSearchBar />
           <Outlet />
           <Footer />
           <Mark />
@@ -106,25 +109,32 @@ const router = createBrowserRouter(
           //let dispatch = useDispatch();
           let search = new URL(request.url).search.replace("?", "");
           if (search.indexOf("filter") === -1) {
-            console.log('a')
+            console.log("a");
             return null;
           } else {
-            let arr = search.split('&')
-            let item
-            arr.forEach(el=>{
-              if(el.indexOf('filter')!==-1){
-                item = el.split('=')
+            let arr = search.split("&");
+            let item;
+            arr.forEach((el) => {
+              if (el.indexOf("filter") !== -1) {
+                item = el.split("=");
               }
-            })
-            if(item[1]===undefined)
-              return null
-            else
-              return item[1]
+            });
+            if (item[1] === undefined) return null;
+            else return item[1];
           }
         }}
         element={<Search />}
         errorElement={<ErrorPage />}
       />
+      <Route
+        path="/account"
+        loader={({ request }) => {
+          return redirect("/account/login");
+        }}
+        errorElement={<ErrorPage />}
+      />
+      <Route path="/account/login" element={<Login />} />
+      <Route path="/account/register" element={<Register />} />
       <Route path="/cart/" element={<Cart />} />
     </Route>
   )

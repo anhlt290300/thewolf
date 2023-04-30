@@ -84,7 +84,7 @@ const CartCard = ({ product_id, size, quantity }) => {
 
 CartCard.propTypes = {
   product_id: PropTypes.string.isRequired,
-  size: PropTypes.string.isRequired,
+  size: PropTypes.string,
   quantity: PropTypes.number.isRequired,
 };
 
