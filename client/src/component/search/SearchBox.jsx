@@ -43,8 +43,6 @@ const SearchBox = () => {
           <div className="mt-[50px] mb-[8px] bg-[#f5f5f5] h-[55px] font-medium relative">
             <input
               type="text"
-              name=""
-              id=""
               className=" pl-[20px] pr-[55px] inline-block h-full outline-none bg-transparent"
               placeholder="Tìm kiếm sản phẩm..."
               onChange={(el) => setKey_(el.target.value)}

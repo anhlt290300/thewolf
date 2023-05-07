@@ -20,7 +20,7 @@ const login = async ({ email, password }) => {
         {
           //expiresIn: '60', //1 minute
           expiresIn: "30 days",
-        }  
+        }
       );
       //clone an add more properties
       return {
@@ -36,7 +36,6 @@ const login = async ({ email, password }) => {
   }
 };
 
-
 const register = async ({
   firstname,
   lastname,
@@ -46,17 +45,10 @@ const register = async ({
   birthday,
 }) => {
   //validation already done
-  //debugger;
   const existingUser = await User.findOne({ email }).exec();
   if (!!existingUser) {
     throw new Exception(Exception.USER_EXIST);
   }
-  //encrypt password, use bcrypt
-  //used for login purpose
-  // const isMatched = await bcrypt.compare(password, existingUser.password)
-  // if(isMatched) {
-
-  // }
   const hashedPassword = await bcrypt.hash(
     password,
     parseInt(process.env.SALT_ROUNDS)
@@ -74,9 +66,10 @@ const register = async ({
     ...newUser._doc,
     password: "Not show",
   };
-  // print('register user with: name: '
-  //     + name + ' email: ' + email + ' password:'
-  //     +password + ' phone:' + phoneNumber+' address:'+address, OutputType.INFORMATION)
+};
+
+const checkUser = async () => {
+  
 };
 export default {
   login,

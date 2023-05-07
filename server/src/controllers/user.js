@@ -1,7 +1,8 @@
 import userRepository from "../respositories/user.js";
 import { EventEmitter } from "events";
 import { body, validationResult } from "express-validator";
-import HttpStatusCode from '../exception/HttpStatusCode.js'
+import HttpStatusCode from "../exception/HttpStatusCode.js";
+import jwt from 'jsonwebtoken'
 
 const myEvent = new EventEmitter();
 
@@ -34,30 +35,47 @@ const login = async (req, res) => {
 };
 
 const register = async (req, res) => {
-
-  const { firstname, lastname, gender, birthday, email, password } = await req.body;
+  const { firstname, lastname, gender, birthday, email, password } =
+    await req.body;
   //console.log(firstname)
-  myEvent.emit('event.register.user', {email, password})
+  myEvent.emit("event.register.user", { email, password });
 
   try {
-    // const user = await userRepository.register({
-    //   firstname,
-    //   lastname,
-    //   gender,  
-    //   birthday,
-    //   email,
-    //   password,
-    // });
-    console.log(firstname)
+    const user = await userRepository.register({
+      firstname,
+      lastname,
+      gender,
+      birthday,
+      email,
+      password,
+    });
+    //console.log(firstname)
     res.status(HttpStatusCode.INSERT_OK).json({
-      message: 'Register user successfully',
-      //data: user
-    })
+      message: "Register user successfully",
+      data: user,
+    });
   } catch (exception) {
     res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
-      message: exception.toString(),      
-    })
+      message: exception.toString(),
+    });
   }
 };
 
-export default { login, register };
+const getUser = async (req, res) => {
+  try {
+    const token = req.headers?.authorization?.split(" ")[1];
+    // jwt.verify(token, process.env.SECRET_KEY, (error, data) => {
+    const jwtObject = jwt.verify(token, process.env.SECRET_KEY);
+    // });
+    res.status(HttpStatusCode.OK).json({
+      message: "user exist",
+      data: jwtObject.data,
+    });
+  } catch (exception) {
+    res.status(HttpStatusCode.NOT_FOUND).json({
+      message: exception.toString(),
+    });
+  }
+};
+
+export default { login, register, getUser };

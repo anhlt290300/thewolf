@@ -4,9 +4,18 @@ dotenv.config();
 import userRouter from "./routes/users.js";
 import connect from "../database/database.js";
 import checkToken from "./authentication/auth.js";
+import cors from 'cors'
+
+const corsOptions = {
+  origin: "*",
+  credentails: true,
+  optionSuccessStatus: 200,
+  port: 3000,
+};
 
 const app = express();
 app.use(express.json());
+app.use(cors(corsOptions));
 
 const port = process.env.PORT ?? 3000;
 

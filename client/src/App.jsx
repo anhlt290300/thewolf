@@ -27,6 +27,8 @@ import Search from "./pages/Search";
 import HeaderSearchBar from "./component/header/HeaderSearchBar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Account from "./pages/Account";
+import { getUser } from "./api/user";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -128,13 +130,36 @@ const router = createBrowserRouter(
       />
       <Route
         path="/account"
-        loader={({ request }) => {
-          return redirect("/account/login");
+        loader={async () => {
+          let user = await getUser();
+          if (!user) return redirect("/account/login");
+          return null;
         }}
+        element={<Account />}
         errorElement={<ErrorPage />}
       />
-      <Route path="/account/login" element={<Login />} />
-      <Route path="/account/register" element={<Register />} />
+      <Route
+        path="/account/login"
+        loader={async () => {
+          let user = await getUser();
+          console.log(user);
+          if (user) return redirect("/account");
+          return null;
+        }}
+        element={<Login />}
+        errorElement={<ErrorPage />}
+      />
+      <Route
+        path="/account/register"
+        loader={async () => {
+          let user = await getUser();
+          console.log(user);
+          if (user) return redirect("/account");
+          return null;
+        }}
+        element={<Register />}
+        errorElement={<ErrorPage />}
+      />
       <Route path="/cart/" element={<Cart />} />
     </Route>
   )

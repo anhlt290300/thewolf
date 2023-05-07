@@ -1,6 +1,35 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Login = () => {
+  const [account, setAccount] = useState({
+    email: "",
+    password: "",
+  });
+
+  const navigate = useNavigate()
+
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    //console.log(account);
+    e.preventDefault();
+    axios
+      .post("http://localhost:5000/user/login", account)
+      .then((res) => {
+        //console.log(res.data);
+        localStorage.setItem('token_thewolf',JSON.stringify(res.data.data.token))
+        navigate('/')
+      })
+      .catch((exeption) => {
+        if (exeption.response) {
+          //console.log(exeption.response.data.message);
+          //console.log(exeption.response.status);
+          setError(exeption.response.data.message)
+        }
+      });
+  };
+
   return (
     <section>
       <div className=" tablet:px-[15px] select-none">
@@ -19,15 +48,24 @@ const Login = () => {
             </div>
           </div>
           <div className=" tablet:py-[100px]  tablet:px-[60px] px-[15px] py-[60px]">
-            <div>
+            <form
+              action="/account/login"
+              onSubmit={(e) => handleSubmit(e)}
+              onChange={(e) => {
+                let name = e.target.name;
+                let value = e.target.value;
+                setAccount({ ...account, [name]: value });
+              }}
+            >
+              {error.length !== 0 && <p className=" mb-[10px] capitalize">{error}</p>}
               <div className="block text-black-primary">
                 <div className="mb-[30px]">
                   <input
                     type="email"
                     className="w-full h-[55px] border-[1px] border-solid border-[#ededed] bg-[#ededed] outline-none px-[20px] font-medium focus:bg-transparent"
                     placeholder="Email"
-                    name=""
-                    id=""
+                    name="email"
+                    //required
                   />
                 </div>
                 <div className="mb-[30px]">
@@ -35,16 +73,21 @@ const Login = () => {
                     type="password"
                     className="w-full h-[55px] border-[1px] border-solid border-[#ededed] bg-[#ededed] outline-none px-[20px] font-medium focus:bg-transparent"
                     placeholder="Mật khẩu"
-                    name=""
-                    id=""
+                    name="password"
+                    min={8}
+                    max={32}
+                    //required
                   />
                 </div>
                 <div className="flex">
-                  <div className=" inline-block align-middle text-white border-white group/login">
+                  <button
+                    type="submit"
+                    className=" inline-block align-middle text-white border-white group/login"
+                  >
                     <p className=" flex items-center justify-center px-[30px] h-[55px] uppercase font-semibold cursor-pointer group-hover/login:text-[#333]">
                       <span className=""> Đăng nhập</span>
                     </p>
-                  </div>
+                  </button>
                   <div className="ml-[20px] flex items-center justify-center align-middle text-[#959898] font-medium">
                     <div className=" inline-block">
                       <span className="text-black hover:text-hover-a">
@@ -59,7 +102,7 @@ const Login = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

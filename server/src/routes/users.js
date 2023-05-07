@@ -15,5 +15,6 @@ router.post(
 );
 router.post('/register', userController.register)
 
+router.get('/getuser',userController.getUser)
 
 export default router;

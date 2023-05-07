@@ -11,13 +11,13 @@ export default function checkToken(req, res, next) {
     //get and validate token
     const token = req.headers?.authorization?.split(" ")[1]
     try {
-        const jwtObject = jwt.verify(token, process.env.SECRET_KEY)        
+        const jwtObject = jwt.verify(token, process.env.SECRET_KEY)
         const isExpired = Date.now() >= jwtObject.exp * 1000
 
         if(isExpired) {
             res.status(HttpStatusCode.BAD_REQUEST).json({
                 message: 'Token is expired'
-            })   
+            })
             res.end() 
         } else {
             next()
