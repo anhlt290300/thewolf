@@ -21,10 +21,10 @@ export default mongoose.model(
       },
     },
     gender: {
-      type: Number,
+      type: String,
       required: true,
       enum: {
-        values: [1, 0],
+        values: ['male', 'female'],
         message: "please chose gender",
       },
     },
@@ -48,5 +48,12 @@ export default mongoose.model(
       type: String,
       required: true,
     },
+    role:{
+      type: String,
+      enum:{
+        values:['admin','user'],
+        default: 'user',
+      }
+    }
   })
 );

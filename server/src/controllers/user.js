@@ -25,7 +25,7 @@ const login = async (req, res) => {
     let existingUser = await userRepository.login({ email, password });
     res.status(HttpStatusCode.OK).json({
       message: "Login user successfully",
-      data: existingUser,
+      data: existingUser.token,
     });
   } catch (exception) {
     res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
@@ -35,24 +35,26 @@ const login = async (req, res) => {
 };
 
 const register = async (req, res) => {
-  const { firstname, lastname, gender, birthday, email, password } =
+  const { firstname, lastname, gender, birthday, email, password, role = "user" } =
     await req.body;
   //console.log(firstname)
   myEvent.emit("event.register.user", { email, password });
 
   try {
-    const user = await userRepository.register({
+    await userRepository.register({
       firstname,
       lastname,
       gender,
       birthday,
       email,
       password,
+      role
     });
+    let existingUser = await userRepository.login({ email, password });
     //console.log(firstname)
     res.status(HttpStatusCode.INSERT_OK).json({
       message: "Register user successfully",
-      data: user,
+      data: existingUser.token,
     });
   } catch (exception) {
     res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({

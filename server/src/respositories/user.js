@@ -43,6 +43,7 @@ const register = async ({
   email,
   password,
   birthday,
+  role
 }) => {
   //validation already done
   const existingUser = await User.findOne({ email }).exec();
@@ -61,6 +62,7 @@ const register = async ({
     birthday,
     email,
     password: hashedPassword,
+    role
   });
   return {
     ...newUser._doc,

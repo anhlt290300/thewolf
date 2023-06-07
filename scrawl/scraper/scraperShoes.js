@@ -11,7 +11,7 @@ const scraper_Shoes = (browser, url) =>
       await newPage.waitForSelector("#collection-body");
 
       const shoes = await newPage.$$eval(
-        "#collection-body > .col-md-12.col-sm-12.col-xs-12 > .row.filter-here > .content-product-list.product-list.filter.clearfix > .col-md-4.col-sm-6.col-xs-6.pro-loop.col-4",
+        "#collection-body > .col-md-12.col-sm-12.col-xs-12 > .row.filter-here > .content-product-list.product-list.filter.clearfix > .col-md-3.col-sm-6.col-xs-6.pro-loop.col-4",
         (els) => {
           shoes = els.map((el) => {
             let item = el.querySelector(
@@ -33,8 +33,8 @@ const scraper_Shoes = (browser, url) =>
             };
             let soldout =
               item.querySelector(".sold-out") === null
-                ? null
-                : item.querySelector(".product-img .sold-out span").innerText;
+                ? 0
+                : 1;
 
             let title = {
               content: item.querySelector(
@@ -42,7 +42,7 @@ const scraper_Shoes = (browser, url) =>
               ).innerText,
               href: item.querySelector(
                 ".product-detail.clearfix .box-pro-detail h3 a"
-              ).href.replace('https://thewolf.vn/',''),
+              ).href.replace('https://thewolf.vn',''),
             };
 
             let buyinstallment =

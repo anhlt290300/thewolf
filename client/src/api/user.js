@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const getUser = async () => {
+const checkUser = async () => {
   const token_ = JSON.parse(localStorage.getItem("token_thewolf"));
+  // console.log(token_)
   try {
     await axios.get("http://localhost:5000/user/getuser", {
       headers: { Authorization: `Bearer ${token_}` },
@@ -9,6 +10,18 @@ const getUser = async () => {
     return true;
   } catch (error) {
     return false;
+  }
+};
+
+const getUser = async () => {
+  const token_ = JSON.parse(localStorage.getItem("token_thewolf"));
+  try {
+    const user = await axios.get("http://localhost:5000/user/getuser", {
+      headers: { Authorization: `Bearer ${token_}` },
+    });
+    return user.data.data;
+  } catch (error) {
+    return null;
   }
 };
 
@@ -24,4 +37,8 @@ const login = async ({ email, password }) => {
   }
 };
 
-export { getUser, login };
+const logout = () => {
+  localStorage.setItem('token_thewolf',JSON.stringify(''))
+};
+
+export { checkUser, login, getUser, logout };

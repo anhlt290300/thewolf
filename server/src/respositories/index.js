@@ -1,3 +1,3 @@
 import userRepository from "./user.js";
-
-export { userRepository };
+import productRepository from "../models/product.js";
+export { userRepository, productRepository };

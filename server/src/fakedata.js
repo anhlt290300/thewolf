@@ -1,10 +1,10 @@
-[
+const data = [
   {
     type: "shoes-for-decor",
     soldout: 1,
     title: {
       content: "THEWOLF PUNISHER CHUNKY MID COMBAT BOOT",
-      href: "products/thewolf-punisher",
+      href: "/products/thewolf-punisher",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/banner_6ede93a2df524cb3b79c7bd65dda16ec_grande.jpg",
@@ -50,14 +50,14 @@
         dataid: "#gal9",
       },
     ],
-    code: "Hết hàng",
+    code: "null",
     price: "5,000,000",
     guarantee:
       '\n          <ul>\n            <li><span style="font-size: 9pt;">Bảo hành trọn đời về các vấn đề bong tróc keo đế.</span></li>\n            <li><span style="font-size: 9pt;">Miễn phí 3 lần vệ sinh đánh bóng giày (mang theo thẻ vệ sinh).</span></li>\n            <li><span style="font-size: 9pt;">Đổi hàng trong vòng 1 tuần nếu xảy ra vấn đề do nhà sản xuất:</span>\n            <ul style="list-style-type: circle;">\n              <li><span style="font-size: 9pt;">Đổi hàng trong vòng 1 tuần nếu xảy ra vấn đề do nhà sản xuất.</span></li>\n              <li><span style="font-size: 9pt;">Trong trường hợp chưa mang lần nào, nhưng bị vấn đề về đế.</span></li>\n            </ul>\n            <li><span style="font-size: 9pt;">Mua tại store hỗ trợ đổi hàng trong vòng 24h.</span></li>\n          </ul>',
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -65,7 +65,7 @@
     soldout: 1,
     title: {
       content: "MỸ DIỆU CHUNKY LOAFER - SHOE FOR DECOR",
-      href: "products/my-dieu-chunky-loafer-shoe-for-decor",
+      href: "/products/my-dieu-chunky-loafer-shoe-for-decor",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/my_dieu_35fa2db1596641c6ba74bbff2bd5d67a_grande.jpg",
@@ -106,7 +106,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -114,7 +114,7 @@
     soldout: 1,
     title: {
       content: "DORAEMON DERBY - SHOE FOR DECOR",
-      href: "products/doraemon-derby-shoe-for-decor",
+      href: "/products/doraemon-derby-shoe-for-decor",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/doraemon_92cb8622d56d4ca6b5a075ec884bc851_grande.jpg",
@@ -163,7 +163,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -171,7 +171,7 @@
     soldout: 0,
     title: {
       content: "MONKEY D. LUFFY PENNY LOAFER - SHOE FOR DECOR",
-      href: "products/thewolf-monkey-d-luffy-penny-loafer",
+      href: "/products/thewolf-monkey-d-luffy-penny-loafer",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/z3751830007919_8b0d2d47c95b5b0585e804e4de7defd6_5577e5182eca4c9aaaca7bd098a53b30_grande.jpg",
@@ -220,7 +220,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -228,7 +228,7 @@
     soldout: 0,
     title: {
       content: "DR STRANGE CHUNKY HI-ANKLE COMBAT BOOTS - SHOES FOR DECOR",
-      href: "products/dr-strange-chunky-hi-ankle-combat-boots",
+      href: "/products/dr-strange-chunky-hi-ankle-combat-boots",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/thewolf_dr_strange_chunky_hi-ankle_combat_boots_5_a25a4465b5a545e1b0dbcd0731f5566d_grande.jpg",
@@ -277,7 +277,7 @@
     soldout: 1,
     title: {
       content: "THE GODZILLA CHUNKY COMBAT BOOTS - SHOES FOR DECOR",
-      href: "products/the-godzilla-chunky-combat-boots",
+      href: "/products/the-godzilla-chunky-combat-boots",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/z3440973890195_30c1de928dc2195af396fde44b799d15_53d5abb929904572b1281a63b37a1060_grande.jpg",
@@ -314,7 +314,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -322,7 +322,7 @@
     soldout: 1,
     title: {
       content: "THE MONEY HEIST LOAFER – SHOES FOR DECOR",
-      href: "products/the-money-heist-loafer-shoes-for-decor",
+      href: "/products/the-money-heist-loafer-shoes-for-decor",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/2_bcc2811fc1a24dd897eece3383eece61_grande.jpg",
@@ -367,7 +367,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -375,7 +375,7 @@
     soldout: 1,
     title: {
       content: "THE SQUID GAME LOAFER – SHOES FOR DECOR",
-      href: "products/the-squid-game-loafer-shoes-for-decor",
+      href: "/products/the-squid-game-loafer-shoes-for-decor",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/12_a3e57fabf0214267b5a36c2b4449bbc2_grande.jpg",
@@ -428,7 +428,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: '<option value="40">40</option>',
   },
   {
@@ -436,7 +436,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT - TAN SUEDE",
-      href: "products/the-mars-wolf-chelsea-boot-tan-suede",
+      href: "/products/the-mars-wolf-chelsea-boot-tan-suede",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_37683ec15b594dd79467d3a367f77090_grande.jpg",
@@ -502,7 +502,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT - BLACK SUEDE",
-      href: "products/the-mars-wolf-chelsea-boot-black-suede",
+      href: "/products/the-mars-wolf-chelsea-boot-black-suede",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_5854fa0ea7fa4b709f6a1f154c1ece8b_grande.jpg",
@@ -556,7 +556,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT SPECIAL EDITION - BLACK",
-      href: "products/the-mars-wolf-chelsea-boot-special-edition-black",
+      href: "/products/the-mars-wolf-chelsea-boot-special-edition-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_b4e517f8116943afbb687158c880a419_grande.jpg",
@@ -622,7 +622,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT - BLACK",
-      href: "products/the-mars-wolf-chelsea-boot-black",
+      href: "/products/the-mars-wolf-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_071068beb0904e37b19b11b9408d102c_grande.jpg",
@@ -676,7 +676,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF MARBE CHUNKY CHELSEA BOOT - BEIGE",
-      href: "products/the-wolf-marbe-chunky-chelsea-boot-beige",
+      href: "/products/the-wolf-marbe-chunky-chelsea-boot-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_03ab52b2e9834602ba0fd52bc01d7fb1_grande.jpg",
@@ -730,7 +730,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF MINIMAL CHELSEA BOOT - TAN",
-      href: "products/the-wolf-minimal-chelsea-boot-tan",
+      href: "/products/the-wolf-minimal-chelsea-boot-tan",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_9a257564e4a14390904d7a67d6a9d202_grande.jpg",
@@ -792,7 +792,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF MINIMAL CHELSEA BOOT - BLACK",
-      href: "products/the-wolf-minimal-chelsea-boot-black",
+      href: "/products/the-wolf-minimal-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_fdebbd159b9f40b7a0b408f6acaf9cb4_grande.jpg",
@@ -854,7 +854,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF CHUNKY CHELSEA BOOT - BLACK",
-      href: "products/the-chunky-chelsea-boot-black",
+      href: "/products/the-chunky-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_a239e00342fa459091bcfc334520dee2_grande.jpg",
@@ -916,7 +916,7 @@
     soldout: 0,
     title: {
       content: "THE CLASSIC CHELSEA BOOT - BLACK",
-      href: "products/the-classic-chelsea-boot-black",
+      href: "/products/the-classic-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_394ea4191335408f9cc10c9fb8b9c631_grande.jpg",
@@ -970,7 +970,7 @@
     soldout: 0,
     title: {
       content: "THE WILD WALK CHELSEA BOOT – BLACK",
-      href: "products/the-wild-walk-chelsea-boot-black",
+      href: "/products/the-wild-walk-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_186b513dc0ce4f37a163200188cb48db_grande.jpg",
@@ -1032,7 +1032,7 @@
     soldout: 0,
     title: {
       content: "THE WILD WALK CHELSEA BOOT – TAN",
-      href: "products/the-wild-walk-chelsea-boot-tan",
+      href: "/products/the-wild-walk-chelsea-boot-tan",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_cfc15ec05df74c478fc01bd94d46ccbd_grande.jpg",
@@ -1086,7 +1086,7 @@
     soldout: 0,
     title: {
       content: "THE WILD WALK CHELSEA BOOT – BLACK SUEDE",
-      href: "products/the-wild-walk-chelsea-boot-black-suede",
+      href: "/products/the-wild-walk-chelsea-boot-black-suede",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_25c98ffbd2114e85b12b7778e0f5f8df_grande.jpg",
@@ -1140,7 +1140,7 @@
     soldout: 0,
     title: {
       content: "THE WILD WALK CHELSEA BOOT – BLACK LIZARD",
-      href: "products/the-wild-walk-chelsea-boot-black-lizard",
+      href: "/products/the-wild-walk-chelsea-boot-black-lizard",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_aacacf20a8c646dc8d6f105b08a71aac_grande.jpg",
@@ -1194,7 +1194,7 @@
     soldout: 0,
     title: {
       content: "THE CLASSIC CHELSEA BOOT - ĐEN DA LỘN",
-      href: "products/the-classic-chelsea-boot-den-da-lon",
+      href: "/products/the-classic-chelsea-boot-den-da-lon",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_cdf240ac00be4a75a08675e963e95543_grande.jpg",
@@ -1248,7 +1248,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF DERBY - BLACK",
-      href: "products/the-mars-wolf-derby-black",
+      href: "/products/the-mars-wolf-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_25ccd02310964c94bb28967445424f9c_grande.jpg",
@@ -1310,7 +1310,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF MODERN EVA BROGUE DERBY - BLACK",
-      href: "products/thewolf-modern-eva-brogue-derby-black",
+      href: "/products/thewolf-modern-eva-brogue-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_4a636ff44b134445931cede6a0e77454_grande.jpg",
@@ -1376,7 +1376,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF MODERN EVA DERBY - BLACK",
-      href: "products/thewolf-modern-eva-derby-black",
+      href: "/products/thewolf-modern-eva-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_f4b2a79e52b346d484ff0062703ccf2d_grande.jpg",
@@ -1442,7 +1442,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF CHUNKY DERBY - BLACK WHITE",
-      href: "products/the-wolf-chunky-derby-black-white",
+      href: "/products/the-wolf-chunky-derby-black-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_b29d64a19ebf4e4c84cb922271622fff_grande.jpg",
@@ -1496,7 +1496,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF MARBE CHUNKY DERBY - BEIGE",
-      href: "products/the-wolf-marbe-chunky-derby-beige",
+      href: "/products/the-wolf-marbe-chunky-derby-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_8cb96985fe774590bae82942d57fdc61_grande.jpg",
@@ -1550,7 +1550,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF CHUNKY DERBY 4 EYELET - BLACK",
-      href: "products/thewolf-chunky-derby-4-eyelet-black",
+      href: "/products/thewolf-chunky-derby-4-eyelet-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_c9d7972611cf413a97723c3dfedcd8e1_grande.jpg",
@@ -1604,7 +1604,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF CHUNKY DERBY - BLACK",
-      href: "products/the-chunky-derby-black",
+      href: "/products/the-chunky-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_a7dd2d10a2064e7bb731635ad0bf5f6a_grande.jpg",
@@ -1658,7 +1658,7 @@
     soldout: 0,
     title: {
       content: "THE MODERN DERBY – BLACK",
-      href: "products/the-modern-derby-black",
+      href: "/products/the-modern-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_b5ce37b41b04450aba7983832cdf6e2d_grande.jpg",
@@ -1720,7 +1720,7 @@
     soldout: 0,
     title: {
       content: "THE MODERN DERBY – BLACK GRAIN",
-      href: "products/the-modern-derby-black-grain",
+      href: "/products/the-modern-derby-black-grain",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_91abd81a804e4b01963ca311cfe937d3_grande.jpg",
@@ -1774,7 +1774,7 @@
     soldout: 0,
     title: {
       content: "THE MODERN BROGUE DERBY – BLACK GRAIN AND WHITE",
-      href: "products/the-modern-brogue-derby-black-grain-and-white",
+      href: "/products/the-modern-brogue-derby-black-grain-and-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_bfc5e56f667642c697c12836ae1a5a28_grande.jpg",
@@ -1828,7 +1828,7 @@
     soldout: 0,
     title: {
       content: "THE 4CM HEEL DERBY – BLACK LIZARD",
-      href: "products/the-4cm-heel-derby-black-lizard",
+      href: "/products/the-4cm-heel-derby-black-lizard",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_108ee41a17f547d282cd261bb5fe1654_grande.jpg",
@@ -1882,7 +1882,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF CHUNKY LOAFER - BLACK OFF WHITE",
-      href: "products/the-sean-wolf-chunky-loafer-black-off-white",
+      href: "/products/the-sean-wolf-chunky-loafer-black-off-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1.2_a6c975d1922945588b5baa534f41cf1d_grande.jpg",
@@ -1952,7 +1952,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF CHUNKY LOAFER - BLACK",
-      href: "products/the-sean-wolf-chunky-loafer-black",
+      href: "/products/the-sean-wolf-chunky-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1.2_5e17d7249a4c484b80def698ad58f653_grande.jpg",
@@ -2022,7 +2022,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF MODERN LOAFER - BLACK OFF WHITE",
-      href: "products/the-sean-wolf-modern-loafer-black-off-white",
+      href: "/products/the-sean-wolf-modern-loafer-black-off-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_bf7eb1ac2c3d4ac9a5536afbcb8d38f3_grande.jpg",
@@ -2092,7 +2092,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF MODERN LOAFER - BLACK",
-      href: "products/the-sean-wolf-modern-loafer-black",
+      href: "/products/the-sean-wolf-modern-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_3c8dae73de314ca6bb817dd6501729eb_grande.jpg",
@@ -2162,7 +2162,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF PENNY LOAFER - BLACK WHITE",
-      href: "products/thewolf-penny-loafer-black-white",
+      href: "/products/thewolf-penny-loafer-black-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_8c3ff4ffe9634a559785e735081fa2ca_grande.jpg",
@@ -2224,7 +2224,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF PENNY LOAFER - BLACK",
-      href: "products/thewolf-penny-loafer-black",
+      href: "/products/thewolf-penny-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_a0c2aeb405934168b8cef7297b42b6a9_grande.jpg",
@@ -2286,7 +2286,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF MODERN EVA LOAFER - BLACK",
-      href: "products/thewolf-modern-eva-loafer-black",
+      href: "/products/thewolf-modern-eva-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_38ff612842c34a14bb01b2f63d2e977c_grande.jpg",
@@ -2352,7 +2352,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF MINIMAL LOAFER - BLACK",
-      href: "products/thewolf-minimal-loafer-black",
+      href: "/products/thewolf-minimal-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_3afa77b4383d41f097ece2fe7fcae526_grande.jpg",
@@ -2414,7 +2414,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF MINIMAL LOAFER - TAN",
-      href: "products/thewolf-minimal-loafer-tan",
+      href: "/products/thewolf-minimal-loafer-tan",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_58413ba0ac244be2bc171cebfad4b57f_grande.jpg",
@@ -2476,7 +2476,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF CHUNKY LOAFER - BLACK",
-      href: "products/thewolf-chunky-loafer-black",
+      href: "/products/thewolf-chunky-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_a14878961375442cb4716332dec30bb9_grande.jpg",
@@ -2538,7 +2538,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF CHUNKY LOAFER - BLACK WHITE",
-      href: "products/the-wolf-chunky-loafer-black-white",
+      href: "/products/the-wolf-chunky-loafer-black-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_ff078dbeff624589a8682c5478abde4d_grande.jpg",
@@ -2600,7 +2600,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF MARBE CHUNKY LOAFER - BEIGE",
-      href: "products/the-wolf-marbe-chunky-loafer-beige",
+      href: "/products/the-wolf-marbe-chunky-loafer-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_d5bcd076598d4ff1bfac78a2037500b5_grande.jpg",
@@ -2654,7 +2654,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF MODERN S SLIPPER - BLACK",
-      href: "products/thewolf-modern-s-slipper-black",
+      href: "/products/thewolf-modern-s-slipper-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_3584710195fc4ef48067001a7225ff3e_grande.jpg",
@@ -2720,7 +2720,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF SLIPPER - BLACK",
-      href: "products/the-wolf-slipper-black",
+      href: "/products/the-wolf-slipper-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_8bf445168f9d4718a86ecb82a8b369bd_grande.jpg",
@@ -2774,7 +2774,7 @@
     soldout: 0,
     title: {
       content: "THE ALPHA WOLF HARNESS BOOT - BLACK",
-      href: "products/the-alpha-wolf-harness-boot-black",
+      href: "/products/the-alpha-wolf-harness-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_339f5550c94840e1963e277f23b597d2_grande.jpg",
@@ -2840,7 +2840,7 @@
     soldout: 0,
     title: {
       content: "THE ALPHA WOLF HARNESS BOOT - TOBACCO",
-      href: "products/the-alpha-wolf-harness-boot-tobacco",
+      href: "/products/the-alpha-wolf-harness-boot-tobacco",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_007e8fc5c8844a97810aaaf09def3124_grande.jpg",
@@ -2906,7 +2906,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF HIGH COMBAT BOOT - BLACK",
-      href: "products/the-mars-wolf-high-combat-boot-black",
+      href: "/products/the-mars-wolf-high-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_83cd49d9ea2444a695f3c20cef4e1efb_grande.jpg",
@@ -2980,7 +2980,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF MID COMBAT BOOT - BLACK",
-      href: "products/the-mars-wolf-mid-combat-boot-black",
+      href: "/products/the-mars-wolf-mid-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_af092ede6d6540f5b71887a29cdb43f6_grande.jpg",
@@ -3046,7 +3046,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF CHUNKY COMBAT BOOT - BLACK",
-      href: "products/the-chunky-combat-boot-black",
+      href: "/products/the-chunky-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_7e56feee46f748568258dd5f7bd63893_grande.jpg",
@@ -3100,7 +3100,7 @@
     soldout: 0,
     title: {
       content: "THE WOLF MARBE CHUNKY COMBAT BOOT - BEIGE",
-      href: "products/the-wolf-marbe-chunky-combat-boot-beige",
+      href: "/products/the-wolf-marbe-chunky-combat-boot-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_b670481718014f179c21b0934189757a_grande.jpg",
@@ -3154,7 +3154,7 @@
     soldout: 0,
     title: {
       content: "THE BASIC WOLF OXFORD - BLACK",
-      href: "products/the-basic-wolf-oxford-black",
+      href: "/products/the-basic-wolf-oxford-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_39e34442ad0b48af9ee06ef37b41d5ab_grande.jpg",
@@ -3208,7 +3208,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF SLIDE SANDAL - BLACK",
-      href: "products/the-sean-wolf-slide-sandal-black",
+      href: "/products/the-sean-wolf-slide-sandal-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_313031701a7b4c05af0b5f53fbbf52c8_grande.jpg",
@@ -3270,7 +3270,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF SLIDE SANDAL - BROWN",
-      href: "products/the-sean-wolf-slide-sandal-brown",
+      href: "/products/the-sean-wolf-slide-sandal-brown",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_ee08296bc9c9459a80e1b19e41c7a980_grande.jpg",
@@ -3332,7 +3332,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF SLIDE SANDAL - WHITE",
-      href: "products/the-sean-wolf-slide-sandal-white",
+      href: "/products/the-sean-wolf-slide-sandal-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_c98888e8f84a481587ddbc86644c87a8_grande.jpg",
@@ -3398,7 +3398,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF CHUNKY CHELSEA BOOT - BLACK",
-      href: "products/the-lady-wolf-chunky-chelsea-boot-black",
+      href: "/products/the-lady-wolf-chunky-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_1e62e3ab904a434585a81f970ff42074_grande.jpg",
@@ -3460,7 +3460,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MARBE CHUNKY CHELSEA BOOT - BEIGE",
-      href: "products/the-lady-wolf-marbe-chunky-chelsea-boot-beige",
+      href: "/products/the-lady-wolf-marbe-chunky-chelsea-boot-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_6427519963ca438fb31f92dc3528163b_grande.jpg",
@@ -3522,7 +3522,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MODERN CHELSEA BOOT - BLACK",
-      href: "products/the-lady-wolf-modern-chelsea-boot-black",
+      href: "/products/the-lady-wolf-modern-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_396ed936139048f896718135c8c729bc_grande.jpg",
@@ -3584,7 +3584,7 @@
     soldout: 0,
     title: {
       content: "THE MARS LADY WOLF CHELSEA BOOT - BLACK",
-      href: "products/the-mars-lady-wolf-chelsea-boot-black",
+      href: "/products/the-mars-lady-wolf-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_960bd5794f1a40cc950ce51d8d59be30_grande.jpg",
@@ -3638,7 +3638,7 @@
     soldout: 0,
     title: {
       content: "THE MARS LADY WOLF CHELSEA BOOT - BLACK SUEDE",
-      href: "products/the-mars-lady-wolf-chelsea-boot-black-suede",
+      href: "/products/the-mars-lady-wolf-chelsea-boot-black-suede",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_bf675c85e02e44cd849e8f3d20225dcd_grande.jpg",
@@ -3692,7 +3692,7 @@
     soldout: 0,
     title: {
       content: "THE MARS LADY WOLF CHELSEA BOOT - TAN SUEDE",
-      href: "products/the-mars-lady-wolf-chelsea-boot-tan-suede",
+      href: "/products/the-mars-lady-wolf-chelsea-boot-tan-suede",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_b97a397b92f2430ab99de27c477fdf2d_grande.jpg",
@@ -3758,7 +3758,7 @@
     soldout: 0,
     title: {
       content: "THE MARS LADY WOLF CHELSEA BOOT SPECIAL EDITION - BLACK",
-      href: "products/the-mars-lady-wolf-chelsea-boot-special-edition-black",
+      href: "/products/the-mars-lady-wolf-chelsea-boot-special-edition-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_46304735409045fbb077ad8fcc87d4ed_grande.jpg",
@@ -3824,7 +3824,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF CHUNKY COMBAT BOOT - BLACK",
-      href: "products/the-lady-wolf-chunky-combat-boot-black",
+      href: "/products/the-lady-wolf-chunky-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_d4efeaf52bf64b02bf224a10d56340b1_grande.jpg",
@@ -3886,7 +3886,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MARBE CHUNKY COMBAT BOOT - BEIGE",
-      href: "products/the-lady-wolf-marbe-chunky-combat-boot-beige",
+      href: "/products/the-lady-wolf-marbe-chunky-combat-boot-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_da1e999790294cf3b6de513851150fc8_grande.jpg",
@@ -3948,7 +3948,7 @@
     soldout: 0,
     title: {
       content: "THE MARS LADY WOLF HIGH COMBAT BOOT - BLACK",
-      href: "products/the-mars-lady-wolf-high-combat-boot-black",
+      href: "/products/the-mars-lady-wolf-high-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_764010d9901243a19b95a7a990abd499_grande.jpg",
@@ -4022,7 +4022,7 @@
     soldout: 0,
     title: {
       content: "THE MARS LADY WOLF MID COMBAT BOOT - BLACK",
-      href: "products/the-mars-lady-wolf-mid-combat-boot-black",
+      href: "/products/the-mars-lady-wolf-mid-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_35a828c87bcd46edbf4f06fdb6e7b4e1_grande.jpg",
@@ -4088,7 +4088,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MODERN EVA DERBY - BLACK",
-      href: "products/the-lady-wolf-modern-eva-derby-black",
+      href: "/products/the-lady-wolf-modern-eva-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_0a7f06c49c05430da51426b1cad2b19e_grande.jpg",
@@ -4142,7 +4142,7 @@
     soldout: 0,
     title: {
       content: "THE MARS LADY WOLF DERBY - BLACK",
-      href: "products/the-mars-lady-wolf-derby-black",
+      href: "/products/the-mars-lady-wolf-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_865e82f064cb418d91d08df363d6457a_grande.jpg",
@@ -4204,7 +4204,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF CHUNKY DERBY - BLACK WHITE",
-      href: "products/the-lady-wolf-chunky-derby-black-white",
+      href: "/products/the-lady-wolf-chunky-derby-black-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_7146e17d3f724f99978698b1829ee223_grande.jpg",
@@ -4258,7 +4258,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MARBE CHUNKY DERBY - BEIGE",
-      href: "products/the-lady-wolf-marbe-chunky-derby-beige",
+      href: "/products/the-lady-wolf-marbe-chunky-derby-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_5d3ac2ebb3854b659516ec5d390bc811_grande.jpg",
@@ -4320,7 +4320,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF CHUNKY DERBY 4 EYELET - BLACK",
-      href: "products/the-lady-wolf-chunky-derby-4-eyelet-black",
+      href: "/products/the-lady-wolf-chunky-derby-4-eyelet-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_d353d8e63e1b4168a56b399cfdde181b_grande.jpg",
@@ -4382,7 +4382,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF CHUNKY DERBY - BLACK",
-      href: "products/the-lady-wolf-chunky-derby-black",
+      href: "/products/the-lady-wolf-chunky-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_2718b52a6d594a2baf87abc6bbaf7838_grande.jpg",
@@ -4444,7 +4444,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MODERN DERBY – BLACK",
-      href: "products/the-lady-wolf-modern-derby-black",
+      href: "/products/the-lady-wolf-modern-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_f9dd67983e38400d92e6769f8df7ac4d_grande.jpg",
@@ -4498,7 +4498,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN LADY WOLF CHUNKY LOAFER - BLACK OFF WHITE",
-      href: "products/the-sean-lady-wolf-chunky-loafer-black-off-white",
+      href: "/products/the-sean-lady-wolf-chunky-loafer-black-off-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1.2_61a08656ef6847659077e521075876f8_grande.jpg",
@@ -4556,7 +4556,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN LADY WOLF CHUNKY LOAFER - BLACK",
-      href: "products/the-sean-lady-wolf-chunky-loafer-black",
+      href: "/products/the-sean-lady-wolf-chunky-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1.2_6e24c837eaef44b880da9b0685117d54_grande.jpg",
@@ -4614,7 +4614,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN LADY WOLF MODERN LOAFER - BLACK OFF WHITE",
-      href: "products/the-sean-lady-wolf-modern-loafer-black-off-white",
+      href: "/products/the-sean-lady-wolf-modern-loafer-black-off-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_736b2fe1da7843079149122eb8cad468_grande.jpg",
@@ -4672,7 +4672,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN LADY WOLF MODERN LOAFER - BLACK",
-      href: "products/the-sean-lady-wolf-modern-loafer-black",
+      href: "/products/the-sean-lady-wolf-modern-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_0ddd993541b44b289aa9b96b0883f1f9_grande.jpg",
@@ -4730,7 +4730,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MODERN EVA LOAFER - BLACK",
-      href: "products/the-lady-wolf-modern-eva-loafer-black",
+      href: "/products/the-lady-wolf-modern-eva-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_f87d081a3a5d4b34afc5f8cabbccf9e0_grande.jpg",
@@ -4792,7 +4792,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF CHUNKY LOAFER - BLACK WHITE",
-      href: "products/the-lady-wolf-chunky-loafer-black-white",
+      href: "/products/the-lady-wolf-chunky-loafer-black-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_c498afffb17842d78451b10b6094f115_grande.jpg",
@@ -4854,7 +4854,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MARBE CHUNKY LOAFER - BEIGE",
-      href: "products/the-lady-wolf-marbe-chunky-loafer-beige",
+      href: "/products/the-lady-wolf-marbe-chunky-loafer-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_bf00b318297a45039c39e21cb527fa32_grande.jpg",
@@ -4916,7 +4916,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF CHUNKY LOAFER - BLACK",
-      href: "products/the-lady-wolf-chunky-loafer-black",
+      href: "/products/the-lady-wolf-chunky-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_d3f0af3b89bf46d1a7950cd18ac53966_grande.jpg",
@@ -4978,7 +4978,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF PENNY LOAFER - BLACK WHITE",
-      href: "products/the-lady-wolf-penny-loafer-black-white",
+      href: "/products/the-lady-wolf-penny-loafer-black-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_fc4c2d993dbd4b1189e82201c8557db1_grande.jpg",
@@ -5040,7 +5040,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF PENNY LOAFER - BLACK",
-      href: "products/the-lady-wolf-penny-loafer-black",
+      href: "/products/the-lady-wolf-penny-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_42abc9e11cda44df8afa5475c2c0f1f3_grande.jpg",
@@ -5102,7 +5102,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF MODERN S SLIPPER - BLACK",
-      href: "products/the-lady-wolf-modern-s-slipper-black",
+      href: "/products/the-lady-wolf-modern-s-slipper-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_2b73bc14dd98462ea9333dec065744ca_grande.jpg",
@@ -5164,7 +5164,7 @@
     soldout: 0,
     title: {
       content: "THE LADY WOLF SLIPPER - BLACK",
-      href: "products/the-lady-wolf-slipper-black",
+      href: "/products/the-lady-wolf-slipper-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_4ceae52949db46b5a3df1cc0d3798e51_grande.jpg",
@@ -5226,7 +5226,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN LADY WOLF SLIDE SANDAL - BLACK",
-      href: "products/the-sean-lady-wolf-slide-sandal-black",
+      href: "/products/the-sean-lady-wolf-slide-sandal-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_8f233260b0fa4d749c0205ee64138c92_grande.jpg",
@@ -5292,7 +5292,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN LADY WOLF SLIDE SANDAL - BROWN",
-      href: "products/the-sean-lady-wolf-slide-sandal-brown",
+      href: "/products/the-sean-lady-wolf-slide-sandal-brown",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_9e3b99e90ecc495abab3385ed7baa7c6_grande.jpg",
@@ -5354,7 +5354,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN LADY WOLF SLIDE SANDAL - WHITE",
-      href: "products/the-sean-lady-wolf-slide-sandal-white",
+      href: "/products/the-sean-lady-wolf-slide-sandal-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_1763899f520a4eb9aeb605d740acdae8_grande.jpg",
@@ -5420,7 +5420,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF BELT - BLACK",
-      href: "products/the-sean-wolf-belt-black",
+      href: "/products/the-sean-wolf-belt-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_ba5398799ded4c4f9966902f635330b4_grande.jpg",
@@ -5466,7 +5466,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF BELT - GOLD",
-      href: "products/the-sean-wolf-belt-gold",
+      href: "/products/the-sean-wolf-belt-gold",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_068e7eca6fe147fd8930e5891b8195ca_grande.jpg",
@@ -5520,7 +5520,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF BELT - SILVER",
-      href: "products/the-sean-wolf-belt-silver",
+      href: "/products/the-sean-wolf-belt-silver",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_c8529adb121a4403bdc1e0a073c99f56_grande.jpg",
@@ -5566,7 +5566,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF SOCK - BLACK",
-      href: "products/thewolf-sock-black",
+      href: "/products/thewolf-sock-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/2_fe86c276462343b5bc27df95b7badf8f_grande.jpg",
@@ -5607,7 +5607,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF SOCK - WHITE",
-      href: "products/thewolf-sock-white",
+      href: "/products/thewolf-sock-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/2_b02f763c79234296ad682b4750ece88c_grande.jpg",
@@ -5648,7 +5648,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF ALIN SAC BEIGE TOTE BAG",
-      href: "products/thewolf-alin-sac-beige-tote-bag",
+      href: "/products/thewolf-alin-sac-beige-tote-bag",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_2ca835fab27642ee9732062155749caa_grande.jpg",
@@ -5713,7 +5713,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF ALIN SAC PLAT TOTE BAG",
-      href: "products/thewolf-alin-sac-plat-tote-bag",
+      href: "/products/thewolf-alin-sac-plat-tote-bag",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_d494216cf31e434e95bd17f52011d097_grande.jpg",
@@ -5778,7 +5778,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF RESSY PETIT BEIGE",
-      href: "products/thewolf-ressy-petit-beige",
+      href: "/products/thewolf-ressy-petit-beige",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_167c8d10e58642798bce77252ced9d17_grande.jpg",
@@ -5839,7 +5839,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF CROSSIC PETIT PLAT",
-      href: "products/thewolf-crossic-petit-plat",
+      href: "/products/thewolf-crossic-petit-plat",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_8e51d542a2374c14aa5a1ce0a8659a0a_grande.jpg",
@@ -5900,7 +5900,7 @@
     soldout: 1,
     title: {
       content: "THE S-WOLF TOTE BAG - BLACK",
-      href: "products/the-s-wolf-tote-bag-black",
+      href: "/products/the-s-wolf-tote-bag-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_33cee81212994464a8bb12fbf2847295_grande.jpg",
@@ -5937,7 +5937,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -5945,7 +5945,7 @@
     soldout: 1,
     title: {
       content: "THE S-WOLF TOTE BAG - MILITARY GREEN",
-      href: "products/the-s-wolf-tote-bag-military-green",
+      href: "/products/the-s-wolf-tote-bag-military-green",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_473561fcf75e415a9b485be2bcc25130_grande.jpg",
@@ -5982,7 +5982,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -5990,7 +5990,7 @@
     soldout: 0,
     title: {
       content: "THE S-WOLF TOTE BAG - ORANGE",
-      href: "products/the-s-wolf-tote-bag-orange",
+      href: "/products/the-s-wolf-tote-bag-orange",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_80075d8a465d4a77952552158b058650_grande.jpg",
@@ -6035,7 +6035,7 @@
     soldout: 1,
     title: {
       content: "THE S-WOLF TOTE BAG - WHITE CREAM",
-      href: "products/the-s-wolf-tote-bag-white-cream",
+      href: "/products/the-s-wolf-tote-bag-white-cream",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_0e2271c9db5b45beba0c287a7f7cc0fa_grande.jpg",
@@ -6072,7 +6072,7 @@
     exchange:
       '\t\t\t\t \n          <ul>\n            <li><span style="font-size: 9pt;">Hàng phải còn nguyên vẹn không có bất kì sự thay đổi nào.</span></li>\n            <li><span style="font-size: 9pt;">Hàng khi đóng gói lại phải kèm túi hộp vẫn còn nguyên vẹn.</span></li>\n            <li><span style="font-size: 9pt;">Phải điền đầy đủ thông tin để tránh thất lạc.</span></li>\n            <li><span style="font-size: 9pt;">Mọi chi phí vận chuyển đổi size sẽ do bên mua chịu toàn bộ chi phí.</span></li>\n          </ul>\n          <div><span style="font-size: 9pt;">&nbsp;LƯU Ý: Nếu lỗi nhà cung cấp chúng tôi sẽ chịu hoàn toàn chi phí.</span></div>\n          <div><span style="font-size: 9pt;">&nbsp;* Liên hệ trực tiếp với chúng tôi để việc trao đổi trở nên dễ dàng hơn.</span></div>            \n        ',
     discount: 0,
-    colors: { title: null, color: "null" },
+    colors: { title: "null", color: "null" },
     sizes: "null",
   },
   {
@@ -6080,7 +6080,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF CHUNKY LOAFER - BLACK OFF WHITE",
-      href: "products/the-sean-wolf-chunky-loafer-black-off-white",
+      href: "/products/the-sean-wolf-chunky-loafer-black-off-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1.2_a6c975d1922945588b5baa534f41cf1d_grande.jpg",
@@ -6150,7 +6150,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF CHUNKY LOAFER - BLACK",
-      href: "products/the-sean-wolf-chunky-loafer-black",
+      href: "/products/the-sean-wolf-chunky-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1.2_5e17d7249a4c484b80def698ad58f653_grande.jpg",
@@ -6220,7 +6220,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF MODERN LOAFER - BLACK OFF WHITE",
-      href: "products/the-sean-wolf-modern-loafer-black-off-white",
+      href: "/products/the-sean-wolf-modern-loafer-black-off-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_bf7eb1ac2c3d4ac9a5536afbcb8d38f3_grande.jpg",
@@ -6290,7 +6290,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF MODERN LOAFER - BLACK",
-      href: "products/the-sean-wolf-modern-loafer-black",
+      href: "/products/the-sean-wolf-modern-loafer-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_3c8dae73de314ca6bb817dd6501729eb_grande.jpg",
@@ -6360,7 +6360,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF SLIDE SANDAL - BROWN",
-      href: "products/the-sean-wolf-slide-sandal-brown",
+      href: "/products/the-sean-wolf-slide-sandal-brown",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_ee08296bc9c9459a80e1b19e41c7a980_grande.jpg",
@@ -6422,7 +6422,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF SLIDE SANDAL - WHITE",
-      href: "products/the-sean-wolf-slide-sandal-white",
+      href: "/products/the-sean-wolf-slide-sandal-white",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_c98888e8f84a481587ddbc86644c87a8_grande.jpg",
@@ -6488,7 +6488,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF SLIDE SANDAL - BLACK",
-      href: "products/the-sean-wolf-slide-sandal-black",
+      href: "/products/the-sean-wolf-slide-sandal-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_313031701a7b4c05af0b5f53fbbf52c8_grande.jpg",
@@ -6550,7 +6550,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF BELT - BLACK",
-      href: "products/the-sean-wolf-belt-black",
+      href: "/products/the-sean-wolf-belt-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_ba5398799ded4c4f9966902f635330b4_grande.jpg",
@@ -6596,7 +6596,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF BELT - GOLD",
-      href: "products/the-sean-wolf-belt-gold",
+      href: "/products/the-sean-wolf-belt-gold",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_068e7eca6fe147fd8930e5891b8195ca_grande.jpg",
@@ -6650,7 +6650,7 @@
     soldout: 0,
     title: {
       content: "THE SEAN WOLF BELT - SILVER",
-      href: "products/the-sean-wolf-belt-silver",
+      href: "/products/the-sean-wolf-belt-silver",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_c8529adb121a4403bdc1e0a073c99f56_grande.jpg",
@@ -6696,7 +6696,7 @@
     soldout: 0,
     title: {
       content: "THEWOLF SIGNATURE SHOE HORN",
-      href: "products/thewolf-signature-shoe-horn",
+      href: "/products/thewolf-signature-shoe-horn",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_48e902dfc1b449b8bba294752031c219_grande.jpg",
@@ -6741,7 +6741,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF HIGH COMBAT BOOT - BLACK",
-      href: "products/the-mars-wolf-high-combat-boot-black",
+      href: "/products/the-mars-wolf-high-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_83cd49d9ea2444a695f3c20cef4e1efb_grande.jpg",
@@ -6815,7 +6815,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF MID COMBAT BOOT - BLACK",
-      href: "products/the-mars-wolf-mid-combat-boot-black",
+      href: "/products/the-mars-wolf-mid-combat-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_af092ede6d6540f5b71887a29cdb43f6_grande.jpg",
@@ -6881,7 +6881,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT - BLACK",
-      href: "products/the-mars-wolf-chelsea-boot-black",
+      href: "/products/the-mars-wolf-chelsea-boot-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_071068beb0904e37b19b11b9408d102c_grande.jpg",
@@ -6935,7 +6935,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT SPECIAL EDITION - BLACK",
-      href: "products/the-mars-wolf-chelsea-boot-special-edition-black",
+      href: "/products/the-mars-wolf-chelsea-boot-special-edition-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_b4e517f8116943afbb687158c880a419_grande.jpg",
@@ -7001,7 +7001,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT - BLACK SUEDE",
-      href: "products/the-mars-wolf-chelsea-boot-black-suede",
+      href: "/products/the-mars-wolf-chelsea-boot-black-suede",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_5854fa0ea7fa4b709f6a1f154c1ece8b_grande.jpg",
@@ -7055,7 +7055,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF CHELSEA BOOT - TAN SUEDE",
-      href: "products/the-mars-wolf-chelsea-boot-tan-suede",
+      href: "/products/the-mars-wolf-chelsea-boot-tan-suede",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_37683ec15b594dd79467d3a367f77090_grande.jpg",
@@ -7121,7 +7121,7 @@
     soldout: 0,
     title: {
       content: "THE MARS WOLF DERBY - BLACK",
-      href: "products/the-mars-wolf-derby-black",
+      href: "/products/the-mars-wolf-derby-black",
     },
     imgcard: {
       src1: "https://product.hstatic.net/200000033444/product/1_25ccd02310964c94bb28967445424f9c_grande.jpg",
@@ -7179,3 +7179,9 @@
       '<option value="35 EU">35 EU</option><option value="36 EU">36 EU</option><option value="37 EU">37 EU</option><option value="38 EU">38 EU</option><option value="39 EU">39 EU</option><option value="40 EU">40 EU</option><option value="41 EU">41 EU</option><option value="42 EU">42 EU</option><option value="43 EU">43 EU</option><option value="44 EU">44 EU</option>',
   },
 ];
+
+const getData = () => {
+  return data;
+};
+
+export { getData };

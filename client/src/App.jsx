@@ -28,7 +28,9 @@ import HeaderSearchBar from "./component/header/HeaderSearchBar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Account from "./pages/Account";
-import { getUser } from "./api/user";
+import AboutUser from "./component/user/AboutUser";
+import Addresses from "./component/user/Addresses";
+import { checkUser, getUser, logout } from "./api/user";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -131,18 +133,29 @@ const router = createBrowserRouter(
       <Route
         path="/account"
         loader={async () => {
-          let user = await getUser();
+          let user = await checkUser();
+          //console.log(user)
           if (!user) return redirect("/account/login");
-          return null;
+          return await getUser();
         }}
         element={<Account />}
         errorElement={<ErrorPage />}
-      />
+      >
+        <Route index element={<AboutUser />} />
+        <Route path="addresses" element={<Addresses />} />
+        <Route
+          path="logout"
+          loader={() => {
+            logout();
+            return redirect("/");
+          }}
+        />
+      </Route>
       <Route
         path="/account/login"
         loader={async () => {
-          let user = await getUser();
-          console.log(user);
+          let user = await checkUser();
+          //console.log(user);
           if (user) return redirect("/account");
           return null;
         }}
@@ -152,8 +165,8 @@ const router = createBrowserRouter(
       <Route
         path="/account/register"
         loader={async () => {
-          let user = await getUser();
-          console.log(user);
+          let user = await checkUser();
+          //console.log(user);
           if (user) return redirect("/account");
           return null;
         }}

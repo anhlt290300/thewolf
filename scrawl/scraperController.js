@@ -1,4 +1,5 @@
 const arr = [
+  "shoes-for-decor",
   "chelsea-boot-nam",
   "derby-nam",
   "giay-loafer-nam",
@@ -20,7 +21,7 @@ const arr = [
   "the-wolf-jacket",
   "the-sean-wolf-collection",
   "the-mars-wolf-collection",
-  "shoes-for-decor",
+  
 ];
 
 const scraper = require("./scraper/scraper");
@@ -58,9 +59,10 @@ const scraperController_Shoes = async (browserInstance, url) => {
     let browser = await browserInstance;
     data = [];
     //
-    for (let j = 0; j < arr.length; j++) {
+    for (let j = 0; j < arr.length ; j++) {
       let url = "https://thewolf.vn/collections/" + arr[j];
       let shoes = await scraper.scraper_Shoes(browser, url);
+      console.log(shoes.length)
       for (let i = 0; i < shoes.length; i++) {
         let { imgcard, soldout, title, buyinstallment } = shoes[i];
         let {

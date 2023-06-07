@@ -1,3 +1,3 @@
 import User from "./user.js";
-
-export { User };
+import Product from "./product.js";
+export { User, Product };

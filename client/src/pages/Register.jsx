@@ -1,6 +1,50 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
+  const [account, setAccount] = useState({
+    email: "",
+    password: "",
+    firstname: "",
+    lastname: "",
+    gender: 1,
+    birthday: "",
+  });
+  const navigate = useNavigate();
+
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    //console.log(account);
+    e.preventDefault();
+    //console.log(account);
+    axios
+      .post("http://localhost:5000/user/register", account)
+      .then((res) => {
+        //console.log(res.data);
+        // localStorage.setItem(
+        //   "token_thewolf",
+        //   JSON.stringify(res.data.data.token)
+        // );
+        navigate("/account");
+      })
+      .catch((exeption) => {
+        if (exeption.response) {
+          // console.log(
+          //   exeption.response.data.message
+          //     .replace("ValidationError:", "")
+          //     .trim()
+          // );
+          //console.log(exeption.response.status);
+          setError(
+            exeption.response.data.message
+              .replace("ValidationError:", "")
+              .trim()
+          );
+        }
+      });
+  };
   return (
     <section>
       <div className=" tablet:px-[15px] select-none">
@@ -19,15 +63,25 @@ const Register = () => {
             </div>
           </div>
           <div className=" tablet:py-[100px]  tablet:px-[60px] px-[15px] py-[60px]">
-            <div>
+            <form
+              action="/account/register"
+              onSubmit={(e) => handleSubmit(e)}
+              onChange={(e) => {
+                let name = e.target.name;
+                let value = e.target.value;
+                setAccount({ ...account, [name]: value });
+              }}
+            >
+              {error.length !== 0 && (
+                <p className=" mb-[10px] capitalize">{error}</p>
+              )}
               <div className="block text-black-primary">
                 <div className="mb-[30px]">
                   <input
                     type="text"
                     className="w-full h-[55px] border-[1px] border-solid border-[#ededed] bg-[#ededed] outline-none px-[20px] font-medium focus:bg-transparent"
                     placeholder="Họ"
-                    name=""
-                    id=""
+                    name="firstname"
                   />
                 </div>
                 <div className="mb-[30px]">
@@ -35,8 +89,7 @@ const Register = () => {
                     type="text"
                     className="w-full h-[55px] border-[1px] border-solid border-[#ededed] bg-[#ededed] outline-none px-[20px] font-medium focus:bg-transparent"
                     placeholder="Tên"
-                    name=""
-                    id=""
+                    name="lastname"
                   />
                 </div>
                 <div className="mb-[30px] flex items-center">
@@ -60,8 +113,7 @@ const Register = () => {
                     type="text"
                     className="w-full h-[55px] border-[1px] border-solid border-[#ededed] bg-[#ededed] outline-none px-[20px] font-medium focus:bg-transparent"
                     placeholder="mm/dd/yyyy"
-                    name=""
-                    id=""
+                    name="birthday"
                   />
                 </div>
                 <div className="mb-[30px]">
@@ -69,8 +121,7 @@ const Register = () => {
                     type="email"
                     className="w-full h-[55px] border-[1px] border-solid border-[#ededed] bg-[#ededed] outline-none px-[20px] font-medium focus:bg-transparent"
                     placeholder="Email"
-                    name=""
-                    id=""
+                    name="email"
                   />
                 </div>
                 <div className="mb-[30px]">
@@ -78,16 +129,18 @@ const Register = () => {
                     type="password"
                     className="w-full h-[55px] border-[1px] border-solid border-[#ededed] bg-[#ededed] outline-none px-[20px] font-medium focus:bg-transparent"
                     placeholder="Mật khẩu"
-                    name=""
-                    id=""
+                    name="password"
                   />
                 </div>
                 <div className="flex">
-                  <div className=" inline-block align-middle text-white border-white group/login">
+                  <button
+                    type="submit"
+                    className=" inline-block align-middle text-white border-white group/login"
+                  >
                     <p className=" flex items-center justify-center px-[30px] h-[55px] uppercase font-semibold cursor-pointer group-hover/login:text-[#333]">
                       <span className=""> Đăng ký</span>
                     </p>
-                  </div>
+                  </button>
                 </div>
                 <div className=" mt-[35px] font-medium">
                   <a href="/" className="  flex items-center">
@@ -108,7 +161,7 @@ const Register = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>
