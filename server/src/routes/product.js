@@ -13,9 +13,9 @@ productRouter.post("/create-product", productController.createProduct);
 productRouter.get("/:title", productController.getProductByTitle);
 
 
-// productRouter.get('/abc',
-//   productController.insertProduct
-// )
+productRouter.get('/fake/start',
+  productController.insertProduct
+)
 
 // router.post('/register', userController.register)
 

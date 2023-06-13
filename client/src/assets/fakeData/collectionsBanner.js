@@ -117,10 +117,10 @@ export const collectionBannerData = [
     type: "the-wolf-tote-bag",
     src: "https://file.hstatic.net/200000033444/file/z3408259334171_4d1298020cb21000e2b3bb7caeb27cb0_76f544eaf147457899bb2b5843e8bf5d.jpg",
   },
-  {
-    type: "the-wolf-jacket",
-    src: "https://file.hstatic.net/200000033444/file/thiet_ke_chua_co_ten-6_163400341857423cad881408f8e9e1d9.jpg",
-  },
+  // {
+  //   type: "the-wolf-jacket",
+  //   src: "https://file.hstatic.net/200000033444/file/thiet_ke_chua_co_ten-6_163400341857423cad881408f8e9e1d9.jpg",
+  // },
   {
     type: "the-mars-wolf-collection",
     src: "https://file.hstatic.net/200000033444/file/z3408259334171_4d1298020cb21000e2b3bb7caeb27cb0_76f544eaf147457899bb2b5843e8bf5d.jpg",

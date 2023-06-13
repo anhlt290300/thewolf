@@ -8,7 +8,7 @@ const CollectionProducts = ({ products }) => {
 
   return (
     <div className="w-full">
-      <div className="px-[15px]">
+      <div className="tablet:px-[15px] px-0">
         <div className=" text-sm leading-[1.4] text-black-primary">
           <div className=" desktop:my-[50px] my-[20px]">
             <div className="px-[15px] text-center desktop:text-2xl text-xl font-bold leading-[1.2]">

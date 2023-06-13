@@ -14,10 +14,6 @@ import {
 } from "react-router-dom";
 import Home from "./pages/Home";
 import ScrollTop from "./component/ScrollTop";
-import {
-  getProductsByHref,
-  getProductsByType,
-} from "./assets/fakeData/products";
 import Collection from "./pages/Collection";
 import Product from "./pages/Product";
 import CartBox from "./component/cart/CartBox";
@@ -31,6 +27,7 @@ import Account from "./pages/Account";
 import AboutUser from "./component/user/AboutUser";
 import Addresses from "./component/user/Addresses";
 import { checkUser, getUser, logout } from "./api/user";
+import { getProductByTitle, getProductByType } from "./api/product";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -80,29 +77,28 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route
         path="/collections/:type"
-        loader={({ params }) => {
+        loader={async ({ params }) => {
           let param = params.type;
 
           let type = param.slice(param.indexOf("?") + 1);
-          let item = getProductsByType(type);
-          //console.log(type);
-          if (item.length === 0) {
+          let products = await getProductByType({ type });
+          //console.log(products)
+          if (products.length === null) {
             throw new Response("Bad Request", { status: 400 });
-          } else return item;
+          } else return products;
         }}
         element={<Collection />}
         errorElement={<ErrorPage />}
       />
       <Route
-        path="/products/:type"
-        loader={({ params }) => {
-          let href = "/products/" + params.type;
+        path="/products/:title"
+        loader={async ({ params }) => {
+          let title = params.title;
 
-          let item = getProductsByHref(href);
-          //console.log(href);
-          if (item.length === 0) {
+          let product = await getProductByTitle({ title });
+          if (product.length === null) {
             throw new Response("Bad Request", { status: 400 });
-          } else return item[0];
+          } else return product;
         }}
         element={<Product />}
         errorElement={<ErrorPage />}

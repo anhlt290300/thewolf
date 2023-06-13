@@ -65,21 +65,29 @@ export default mongoose.model(
         },
       },
     },
+    discount: {
+      type: Number,
+      required: true,
+      validate: {
+        validator: (value) => value >= 0,
+        message: "discount must be number and > 0",
+      },
+    },
     buyinstallment: {
-      app: {
+      href: {
         type: String,
         required: false,
         validate: {
-          validator: (value) => value.length > 2,
-          message: "app must be at least 3 characters",
+          validator: (value) => value.length > 0,
+          message: "app must be at least 1 characters",
         },
       },
-      content: {
+      src_app: {
         type: String,
         required: false,
         validate: {
-          validator: (value) => value.length > 2,
-          message: "content must be at least 3 characters",
+          validator: (value) => value.length > 0,
+          message: "content must be at least 1 characters",
         },
       },
     },

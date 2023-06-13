@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 
 const ProductGallery = ({ product }) => {
   return (
-    <div className=" col-span-6 px-[15px] select-none">
+    <div className=" col-span-5 px-[15px] select-none">
       <div className="w-full desktop:block hidden">
         <ul>
           {product.imgs.map((item, index) => {
@@ -48,7 +48,7 @@ const ProductGallery = ({ product }) => {
           <iframe
             width="100%"
             className=" tablet:h-[50vw] h-[55vw]"
-            src="https://www.youtube.com/embed/i8Iux8vgqV4?autoplay=1&controls=0&modestbranding=0&rel=0&loop=1&playlist=i8Iux8vgqV4&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fthewolf.vn&widgetid=1"
+            src="https://www.youtube.com/embed/i8Iux8vgqV4?autoplay=1&mute=1&controls=0&modestbranding=0&rel=0&loop=1&playlist=i8Iux8vgqV4&playsinline=1&enablejsapi=1&origin=https%3A%2F%2Fthewolf.vn&widgetid=1"
             frameBorder="0"
             allowFullScreen="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

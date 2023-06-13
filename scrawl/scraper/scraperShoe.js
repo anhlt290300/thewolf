@@ -90,13 +90,15 @@ const scraper_Shoe = (browser, url) =>
 
           let discount =
             el
-              .querySelectorAll(".col-md-3.col-sm-12.col-xs-12")[1]
-              ?.querySelector(".product-price .pro-sale")?.innerText ===
-            undefined
+              .querySelector(".col-md-4.col-sm-12.col-xs-12")
+              ?.querySelector("form .zzzprice .product-price .pro-sale")
+              ?.innerText === undefined
               ? 0
               : el
-                  .querySelectorAll(".col-md-3.col-sm-12.col-xs-12")[1]
-                  ?.querySelector(".product-price .pro-sale")?.innerText;
+                  .querySelector(".col-md-4.col-sm-12.col-xs-12")
+                  ?.querySelector("form .zzzprice .product-price .pro-sale")
+                  ?.innerText.replace("-", "")
+                  .replace("%", "");
 
           let price = el
             .querySelector(".zzzprice")

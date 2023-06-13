@@ -1,14 +1,16 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { getFundii, getSalePrice } from "../utils/getTotal";
 
 const ProductCard = ({ product }) => {
+  const discount_ = `-${product.discount}%`;
   return (
     <div>
       <div className="tablet:block hidden">
         <div className="group/homecollection">
           <div className=" relative">
             <div className=" absolute top-[10px] left-[10px] text-reddiscount z-[100] text-xs font-semibold">
-              <span>{product.discount}</span>
+              {product.discount !== 0 && <span>{discount_}</span>}
             </div>
             <a href={product.imgcard.href} className=" inline-block relative">
               <img
@@ -30,19 +32,29 @@ const ProductCard = ({ product }) => {
               </p>
               <p className=" text-black-primary">
                 <span className=" text-hover-a text-sm">
-                  {product.price.saleprice}
+                  {getSalePrice(product.price, product.discount)}
                 </span>
-                <span className=" text-[#939393] text-[12px] ml-[5px]">
-                  <del>{product.price.realprice}</del>
-                </span>
+                {product.discount !== 0 && (
+                  <span className=" text-[#939393] text-[12px] ml-[5px]">
+                    <del>{product.price}₫</del>
+                  </span>
+                )}
               </p>
               {product.buyinstallment && (
-                <p>
-                  <span className=" text-xs font-semibold">
-                    {product.buyinstallment.content}
-                    <b className="ml-[5px] text-bluebold">
-                      {product.buyinstallment.app}
-                    </b>
+                <p className="mt-1">
+                  <span className="text-xs ">
+                    hoặc <b>{getFundii(product.price, product.discount)}</b> x3
+                    với
+                    <a
+                      href={product.buyinstallment.href}
+                      className=" inline-block underline ml-1"
+                    >
+                      <img
+                        src={product.buyinstallment.src_app}
+                        alt=""
+                        className=" mobile-L:h-[15px] h-[12px]"
+                      />
+                    </a>
                   </span>
                 </p>
               )}
@@ -54,7 +66,7 @@ const ProductCard = ({ product }) => {
         <div className="group/homecollection">
           <div className=" relative">
             <div className=" absolute top-[10px] left-[10px] text-reddiscount z-[100] text-xs font-semibold">
-              <span>{product.discount}</span>
+              {product.discount !== 0 && <span>{discount_}</span>}
             </div>
             <a href={product.imgcard.href} className=" inline-block relative">
               <img
@@ -70,10 +82,10 @@ const ProductCard = ({ product }) => {
             </a>
             <div className=" inline-block absolute left-[10px] bottom-[10px] z-[30] ">
               <span className=" bg-[rgba(0,0,0,0.7)] text-white py-[2px] px-[8px] text-[10px] mr-[3px] font-medium leading-5 rounded">
-                {product.price.saleprice}
+                {getSalePrice(product.price, product.discount)}
               </span>
               <span className="text-[9px] ml-[5px]">
-                <del>{product.price.realprice}</del>
+                <del>{product.price}₫</del>
               </span>
             </div>
           </div>
@@ -83,12 +95,20 @@ const ProductCard = ({ product }) => {
                 <a href={product.title.href}>{product.title.content}</a>
               </p>
               {product.buyinstallment && (
-                <p className="">
-                  <span className=" font-bold">
-                    {product.buyinstallment.content}
-                    <b className="ml-[5px] text-bluebold">
-                      {product.buyinstallment.app}
-                    </b>
+                <p className="mt-1">
+                  <span className=" mobile-L:text-xs mobile-M:text-[10px] text-[9px] ">
+                    hoặc <b>{getFundii(product.price, product.discount)}</b> x3
+                    với
+                    <a
+                      href={product.buyinstallment.href}
+                      className=" inline-block underline ml-1"
+                    >
+                      <img
+                        src={product.buyinstallment.src_app}
+                        alt=""
+                        className=" h-[12px]"
+                      />
+                    </a>
                   </span>
                 </p>
               )}

@@ -27,9 +27,9 @@ const CartBox = () => {
       ref={(el) => (cartRef.current = el)}
       className=" tablet:w-[510px] overflow-hidden w-[320px] h-screen bg-white fixed top-0 translate-x-full desktop-L:-right-[30px] right-0 z-[999] transition-all duration-500 ease-easy_  text-sm select-none"
     >
-      <div className=" overflow-y-scroll w-full relative h-full">
+      <div className=" overflow-y-scroll no-scrollbar w-full relative h-full">
         <div
-          className=" overflow-y-scroll h-full 
+          className=" overflow-y-scroll no-scrollbar h-full 
         tablet:px-[70px] tablet:py-[60px] px-[30px] py-[40px] "
         >
           <p className=" font-medium">GIỎ HÀNG</p>

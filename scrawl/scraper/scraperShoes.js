@@ -47,25 +47,17 @@ const scraper_Shoes = (browser, url) =>
 
             let buyinstallment =
               item.querySelector(
-                ".product-detail.clearfix .box-pro-detail .buy-installment"
+                ".product-detail.clearfix .box-pro-detail .box-pro-prices .fundiin"
               ) !== null
                 ? {
-                    app: item.querySelector(
-                      ".product-detail.clearfix .box-pro-detail .buy-installment span b"
-                    ).innerText,
-                    content: item
-                      .querySelector(
-                        ".product-detail.clearfix .box-pro-detail .buy-installment span"
-                      )
-                      .innerText.replace(
-                        item.querySelector(
-                          ".product-detail.clearfix .box-pro-detail .buy-installment span b"
-                        ).innerText,
-                        ""
-                      )
-                      .replace("\n", ""),
+                    href: item.querySelector(
+                      ".product-detail.clearfix .box-pro-detail .box-pro-prices .fundiin a"
+                    ).href,
+                    src_app:item.querySelector(
+                      ".product-detail.clearfix .box-pro-detail .box-pro-prices .fundiin a img"
+                    ).src,                    
                   }
-                : null;
+                : 'null';
             return {
               imgcard: imgcard,
               soldout: soldout,

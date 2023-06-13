@@ -5,6 +5,7 @@ import {
   userRouter,
   productRouter,
   collectionsRouter,
+  voucherRouter,
 } from "./routes/index.js";
 import connect from "../database/database.js";
 import checkToken from "./authentication/auth.js";
@@ -24,8 +25,9 @@ app.use(cors(corsOptions));
 const port = process.env.PORT ?? 3000;
 
 app.use("/user", userRouter);
-app.use("/product", productRouter);
+app.use("/products", productRouter);
 app.use("/collections", collectionsRouter);
+app.use("/voucher", voucherRouter);
 app.use(checkToken); //shield, guard
 app.get("/", (req, res) => {
   res.send("thewolf");

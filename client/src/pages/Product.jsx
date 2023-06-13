@@ -7,7 +7,7 @@ import ProductBuy from "../component/product/ProductBuy";
 
 const Product = () => {
   const product = useLoaderData();
-  console.log(product);
+  //console.log(product);
   return (
     <div>
       <BreadCrumb />

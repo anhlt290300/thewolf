@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 const ProductDescription = ({ product }) => {
   const desciptionRef = useRef([]);
-
+  //console.log(product)
   const toggle = (ref) => {
     desciptionRef.current.forEach((el) => {
       if (el.getAttribute("id") !== ref.getAttribute("id")) {
@@ -15,17 +15,14 @@ const ProductDescription = ({ product }) => {
   };
   return (
     <div className="px-[15px] col-span-3 select-none tablet:order-none order-last relative">
-      <div className=" desktop:sticky top-[55%] desktop:-translate-y-1/2 left-0 w-full">
-        <div className=" pb-[10px] tablet:block hidden">
-          <p className=" font-bold text-[13px] mb-[5px] text-black-primary">
-            {product.title.content}
-          </p>
-          <span className=" text-[11px] font-medium text-[#a3a5a7] leading-[1.4]">
-            {product.code}
+      <div className=" desktop:sticky top-[55%] desktop:-translate-y-[calc(200px)] left-0 w-full">
+        <div className=" pb-[10px] tablet:block hidden">          
+          <span className=" text-[11px] font-light text-[#a3a5a7] leading-[1.4]">
+            SKU: {product.code}
           </span>
-          {product.soldout && (
+          {product.soldout !== 0 && (
             <span className=" text-sm text-black-primary leading-[1.4] ml-[5px]">
-              {product.soldout}
+              'Het hang'
             </span>
           )}
         </div>

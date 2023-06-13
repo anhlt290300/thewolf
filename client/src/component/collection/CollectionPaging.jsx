@@ -3,7 +3,7 @@ import { useLoaderData, useLocation, useSearchParams } from "react-router-dom";
 import CollectionProducts from "./CollectionProducts";
 import Paging from "./Paging";
 
-const CollectionPaging = (props) => {
+const CollectionPaging = () => {
   const searchParams = useSearchParams();
   const [curretnpage, setCurrentPage] = useState(1);
   const [lastpage, setLastPage] = useState(1);

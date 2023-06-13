@@ -19,13 +19,14 @@ const createProduct = async (req, res) => {
     imgs,
     code,
     price,
+    discount,
     guarantee,
     exchange,
     colors,
     sizes,
   } = await req.body;
   try {
-    let existingUser = await productRepository.createProduct({
+    let product = await productRepository.createProduct({
       type,
       soldout,
       title,
@@ -34,13 +35,14 @@ const createProduct = async (req, res) => {
       imgs,
       code,
       price,
+      discount,
       guarantee,
       exchange,
       colors,
       sizes,
     });
     res.status(HttpStatusCode.OK).json({
-      message: existingUser,
+      message: product,
     });
   } catch (exception) {
     res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
@@ -59,6 +61,7 @@ const insertProduct = async (req, res) => {
     imgs,
     code,
     price,
+    discount,
     guarantee,
     exchange,
     colors,
@@ -76,6 +79,7 @@ const insertProduct = async (req, res) => {
         (imgs = arr[i].imgs),
         (code = arr[i].code),
         (price = arr[i].price),
+        (discount = arr[i].discount),
         (guarantee = arr[i].guarantee),
         (exchange = arr[i].exchange),
         (colors = arr[i].colors),
@@ -89,6 +93,7 @@ const insertProduct = async (req, res) => {
         imgs,
         code,
         price,
+        discount,
         guarantee,
         exchange,
         colors,
@@ -124,28 +129,8 @@ const getProductByTitle = async (req, res) => {
   }
 };
 
-const getProductByType = async (req, res) => {
-  //const { type } = req.params;
-  let type = "shoes-for-decor";
-  //console.log(title);
-  try {
-    let result = await productRepository.getProductByType({
-      type,
-    });
-    res.status(HttpStatusCode.OK).json({
-      message: `already get product by types ${type}`,
-      data: result,
-    });
-  } catch (exception) {
-    res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
-      message: exception.toString(),
-    });
-  }
-};
-
 export default {
   createProduct,
   insertProduct,
   getProductByTitle,
-  getProductByType,
 };
