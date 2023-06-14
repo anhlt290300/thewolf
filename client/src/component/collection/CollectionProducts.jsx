@@ -16,7 +16,7 @@ const CollectionProducts = ({ products }) => {
             </div>
           </div>
         </div>
-        <div className="grid desktop:grid-cols-3 grid-cols-2">
+        <div className="grid desktop:grid-cols-4 grid-cols-2">
           {products.length !== 0 &&
             products.map((item, index) => {
               return (

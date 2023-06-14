@@ -7,7 +7,8 @@ import { toggleBoxCart } from "../../redux/slice/BoxCartSlice";
 import { toggleMark } from "../../redux/slice/MarkSlice";
 import Quantity from "../cart/Quantity";
 import { getFundii, getSalePrice } from "../../utils/getTotal";
-import Voucher from "./Voucher";
+import VoucherBox from "../voucher/VoucherBox";
+import { toggleBoxFundii } from "../../redux/slice/FundiiSlice";
 
 const ProductBuy = ({ product }) => {
   const discount_ = `-${product.discount}%`;
@@ -79,7 +80,7 @@ const ProductBuy = ({ product }) => {
               </span>{" "}
               với{" "}
             </b>
-            <div className="flex cursor-pointer ml-2">
+            <div onClick={()=>dispatch(toggleBoxFundii())} className="flex cursor-pointer ml-2">
               <svg
                 className="fdn-long-logo"
                 width="65"
@@ -238,7 +239,7 @@ const ProductBuy = ({ product }) => {
               </svg>
             </div>
           </div>
-          <Voucher />
+          <VoucherBox />
         </div>
 
         <div className="flex w-full justify-center items-center">

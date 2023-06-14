@@ -4,12 +4,16 @@ import ProductDescription from "../component/product/ProductDescription";
 import { useLoaderData } from "react-router-dom";
 import ProductGallery from "../component/product/ProductGallery";
 import ProductBuy from "../component/product/ProductBuy";
+import Voucher from "../component/voucher/Voucher";
+import FundiiModel from "../component/product/FundiiModel";
 
 const Product = () => {
   const product = useLoaderData();
   //console.log(product);
   return (
     <div>
+      <Voucher />
+      <FundiiModel />
       <BreadCrumb />
       <section>
         <div className="py-[30px] w-full">

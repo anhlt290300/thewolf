@@ -75,7 +75,7 @@ const CartBox = () => {
                   Xem giỏ hàng
                 </a>
                 <a
-                  href="/checkout"
+                  href="/checkouts"
                   className="inline-block h-fit tablet:py-[19px] py-[8px] ml-[10px] tablet:px-[30px] px-[15px] whitespace-nowrap mt-[10px]
                    border-[1px] border-solid border-white uppercase bg-black-primary text-white text-center tablet:text-[12px] text-[11px]"
                 >

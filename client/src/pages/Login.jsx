@@ -18,8 +18,8 @@ const Login = () => {
       .post("http://localhost:5000/user/login", account)
       .then((res) => {
         //console.log(res.data);
-        localStorage.setItem('token_thewolf',JSON.stringify(res.data.data.token))
-        navigate('/')
+        localStorage.setItem('token_thewolf',JSON.stringify(res.data.data))
+        navigate('/account')
       })
       .catch((exeption) => {
         if (exeption.response) {

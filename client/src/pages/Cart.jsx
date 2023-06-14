@@ -25,7 +25,7 @@ const Cart = () => {
             </p>
           </div>
         </div>
-        <div className=" desktop-L:px-[100px] px-[15px] mb-[30px]">
+        <div className=" desktop:px-[100px] px-[15px] mb-[30px]">
           <div className="grid grid-cols-12 tablet:gap-[30px]">
             {cartArr.length !== 0 &&
               cartArr.map((item, index) => {
@@ -88,7 +88,7 @@ const Cart = () => {
                 >
                   Cập nhật
                 </button>
-                <button className=" inline-block tablet:p-[20px] px-[15px] py-[8px] whitespace-nowrap">Thanh toán</button>
+                <a href="/checkouts" className=" inline-block tablet:p-[20px] px-[15px] py-[8px] whitespace-nowrap">Thanh toán</a>
               </div>
             </div>
           </div>
