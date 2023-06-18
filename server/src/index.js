@@ -24,6 +24,14 @@ app.use(cors(corsOptions));
 
 const port = process.env.PORT || 3000;
 
+
+
+
+app.listen(port, async () => {
+  await connect();
+  console.log(`server listen at http://localhost:${port}`);
+});
+
 app.use("/user", userRouter);
 app.use("/products", productRouter);
 app.use("/collections", collectionsRouter);
@@ -32,13 +40,3 @@ app.use(checkToken); //shield, guard
 app.get("/", (req, res) => {
   res.send("thewolf");
 });
-
-connect()
-  .then(() => {
-    app.listen(port, async () => {
-      console.log(`server listen at http://localhost:${port}`);
-    });
-  })
-  .catch((e) => {
-    console.log(e);
-  });
