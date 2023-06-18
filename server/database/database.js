@@ -1,10 +1,12 @@
 import mongoose from "mongoose";
-import { print, OutputType } from '../src/helps/print.js'
+import { print, OutputType } from "../src/helps/print.js";
 import Exception from "../src/exception/exceptions.js";
 mongoose.set("strictQuery", true);
 const connect = async () => {
   try {
-    let connection = await mongoose.connect(process.env.MONGO_URI);
+    let connection = await mongoose.connect(
+      "mongodb+srv://admin:0918806450@cluster0.oo9mk1h.mongodb.net/thewolf?retryWrites=true&w=majority"
+    );
     print("Connect mongoose successfully", OutputType.SUCCESS);
     return connection;
   } catch (error) {

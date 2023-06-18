@@ -22,7 +22,7 @@ const app = express();
 app.use(express.json());
 app.use(cors(corsOptions));
 
-const port = process.env.PORT ?? 3000;
+const port = process.env.PORT || 3000;
 
 app.use("/user", userRouter);
 app.use("/products", productRouter);
