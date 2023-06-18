@@ -52,7 +52,7 @@ const register = async ({
   }
   const hashedPassword = await bcrypt.hash(
     password,
-    parseInt(process.env.SECRET_KEY)
+    parseInt(process.env.SALT_ROUNDS)
   );
   //insert to db
   const newUser = await User.create({
