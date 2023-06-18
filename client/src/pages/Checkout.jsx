@@ -1,9 +1,18 @@
-import React from 'react'
+import React from "react";
+import PaymentDetail from "../component/checkout/payment/payment_detail/PaymentDetail";
+import BillDetail from "../component/checkout/bill/BillDetail";
 
 const Checkout = () => {
   return (
-    <div>Checkout</div>
-  )
-}
+    <section>
+      <div className="flex">
+        <div className="w-[90%]  flex flex-[1_0_auto] ">
+          <PaymentDetail />
+          <BillDetail />
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Checkout
+export default Checkout;

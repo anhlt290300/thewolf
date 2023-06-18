@@ -7,6 +7,7 @@ import searchboxReducer from "./slice/BoxSearchSlice";
 import searchReducer from "./slice/SearchSlice";
 import voucherSlice from "./slice/VoucherSlice";
 import fundiiSlice from "./slice/FundiiSlice";
+import deliveryAddress from "./slice/DeliveryAddress";
 export default configureStore({
   reducer: {
     burger: burgerReducer,
@@ -17,5 +18,6 @@ export default configureStore({
     search: searchReducer,
     voucher: voucherSlice,
     fundii: fundiiSlice,
+    deliveryaddress: deliveryAddress,
   },
 });

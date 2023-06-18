@@ -20,7 +20,7 @@ const Register = () => {
     e.preventDefault();
     //console.log(account);
     axios
-      .post("http://localhost:5000/user/register", account)
+      .post(`${process.env.REACT_APP_PORT}/user/register`, account) 
       .then((res) => {
         //console.log(res.data);
         // localStorage.setItem(

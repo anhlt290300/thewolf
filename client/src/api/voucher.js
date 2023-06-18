@@ -4,7 +4,7 @@ const getVoucher = async () => {
 
   try {
     const voucher = await axios.get(
-      `http://localhost:5000/voucher/get/all`
+      `${process.env.REACT_APP_PORT}/voucher/get/all`
     );
     //console.log(voucher.data.data)
     return voucher.data.data;

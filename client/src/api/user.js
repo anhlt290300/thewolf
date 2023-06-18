@@ -4,7 +4,7 @@ const checkUser = async () => {
   const token_ = JSON.parse(localStorage.getItem("token_thewolf"));
   // console.log(token_)
   try {
-    await axios.get("http://localhost:5000/user/getuser", {
+    await axios.get(`${process.env.REACT_APP_PORT}/user/getuser`, {
       headers: { Authorization: `Bearer ${token_}` },
     });
     return true;
@@ -16,7 +16,7 @@ const checkUser = async () => {
 const getUser = async () => {
   const token_ = JSON.parse(localStorage.getItem("token_thewolf"));
   try {
-    const user = await axios.get("http://localhost:5000/user/getuser", {
+    const user = await axios.get(`${process.env.REACT_APP_PORT}/user/getuser`, {
       headers: { Authorization: `Bearer ${token_}` },
     });
     return user.data.data;
@@ -27,7 +27,7 @@ const getUser = async () => {
 
 const login = async ({ email, password }) => {
   try {
-    let user = await axios.post("http://localhost:5000/user/login", {
+    let user = await axios.post(`${process.env.REACT_APP_PORT}/user/login`, {
       email: email,
       password: password,
     });
