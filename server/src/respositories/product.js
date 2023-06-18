@@ -76,8 +76,15 @@ const getProductByType = async ({ type }) => {
   }
 };
 
+const getListProductById = async ({ arrIdProduct }) => {
+  //console.log(arrIdProduct);
+  const product = await Product.find().where("code").in(arrIdProduct).exec();
+  return product;
+};
+
 export default {
   createProduct,
   getProductByTitle,
   getProductByType,
+  getListProductById,
 };

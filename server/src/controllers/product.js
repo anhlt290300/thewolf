@@ -129,8 +129,28 @@ const getProductByTitle = async (req, res) => {
   }
 };
 
+const getListProduct = async (req, res) => {
+  const { products } = req.query;
+  const arrIdProduct = products.split(",");
+  //console.log(products);
+  try {
+    let result = await productRepository.getListProductById({
+      arrIdProduct,
+    });
+    res.status(HttpStatusCode.OK).json({
+      message: `already get list product by id`,
+      data: result,
+    });
+  } catch (exception) {
+    res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
+      message: exception.toString(),
+    });
+  }
+};
+
 export default {
   createProduct,
   insertProduct,
   getProductByTitle,
+  getListProduct,
 };

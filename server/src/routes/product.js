@@ -9,13 +9,12 @@ productRouter.get("/", (req, res) => {
 productRouter.post("/create-product", productController.createProduct);
 
 //productRouter.get("/abc/a", productController.getProductByType);
+productRouter.get("/getproducts", productController.getListProduct);
 
 productRouter.get("/:title", productController.getProductByTitle);
 
 
-productRouter.get('/fake/start',
-  productController.insertProduct
-)
+productRouter.get("/fake/start", productController.insertProduct);
 
 // router.post('/register', userController.register)
 
