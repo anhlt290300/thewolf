@@ -2,9 +2,9 @@ import React from "react";
 
 const PaymentHeader = () => {
   return (
-    <div className="pb-[1em]">
+    <div className="pb-[1em] select-none desktop:block hidden">
       <a href="/">
-        <h1 className=" text-black-primary text-[2em] font-medium ">THEWOLF</h1>
+        <h1 className=" text-black-primary text-[2em] font-medium inline-block">THEWOLF</h1>
       </a>
       <ul className="flex mt-[1em]">
         <li>

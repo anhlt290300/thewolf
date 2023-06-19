@@ -31,9 +31,7 @@ const Header = () => {
   }, [flag]);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      //
-
+    const toggle = () => {
       if (
         document.body.scrollTop > 200 ||
         document.documentElement.scrollTop > 200
@@ -48,9 +46,10 @@ const Header = () => {
         toolRef.current.classList.remove("desktop:text-black");
         toolRef.current.classList.add("desktop:text-white");
       }
-    });
+    };
+    window.addEventListener("scroll", () => toggle);
     return () => {
-      window.removeEventListener("scroll");
+      window.removeEventListener("scroll", toggle);
     };
   }, []);
 

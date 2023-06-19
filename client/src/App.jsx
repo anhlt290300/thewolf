@@ -30,6 +30,8 @@ import Checkout from "./pages/Checkout";
 import { checkUser, getUser, logout } from "./api/user";
 import { getProductByTitle, getProductByType } from "./api/product";
 
+import store from "./redux/store";
+
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
   const mainRef = useRef(null);
@@ -175,6 +177,14 @@ const router = createBrowserRouter(
       </Route>
       <Route
         path="/checkouts"
+        loader={async () => {
+          let user = await checkUser();
+
+          let { cartlength } = store.getState().cart;
+          if (cartlength === 0) redirect("/cart");
+          if (!user) return null;
+          return await getUser();
+        }}
         element={<Checkout />}
         errorElement={
           <>

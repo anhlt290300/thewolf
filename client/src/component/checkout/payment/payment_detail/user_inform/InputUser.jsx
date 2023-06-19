@@ -26,6 +26,7 @@ const InputUser = ({ title, type }) => {
       </label>
       <input
         onChange={(e) => setValue(e.target.value)}
+        defaultValue=""
         type={type}
         className="w-full outline-none rounded-[4px] shadow-[0_0_0_1px_#d9d9d9] appearance-none text-black font-medium focus:shadow-[0_0_0_2px_#338dbc] p-[0.94em_2.8em_0.94em_0.8em] transition-all duration-200 ease-in-out break-normal
         group-[.active]/input:pt-[1.5em] group-[.active]/input:pb-[0.38em]"

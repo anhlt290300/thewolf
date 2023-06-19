@@ -5,10 +5,15 @@ import BillDetail from "../component/checkout/bill/BillDetail";
 const Checkout = () => {
   return (
     <section>
-      <div className="flex">
-        <div className="w-[90%]  flex flex-[1_0_auto] ">
+      <div className="flex w-full h-full ">
+        <div className=" flex desktop:flex-row flex-col-reverse justify-center w-full h-full">
           <PaymentDetail />
           <BillDetail />
+          <a className=" desktop:hidden block py-[1.5em] max-w-[40em] w-full mx-auto" href="/">
+            <h1 className=" text-black-primary text-[2em] font-medium inline-block px-[0.5em]">
+              THEWOLF
+            </h1>
+          </a>
         </div>
       </div>
     </section>

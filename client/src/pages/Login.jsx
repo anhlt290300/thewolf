@@ -1,13 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 const Login = () => {
   const [account, setAccount] = useState({
     email: "",
     password: "",
   });
 
-  const navigate = useNavigate()
+  let [searchParams, setSearchParams] = useSearchParams();
+  let query = searchParams.get("urlredirect");
+
+  //console.log(query);
+
+  const navigate = useNavigate();
 
   const [error, setError] = useState("");
 
@@ -18,14 +23,15 @@ const Login = () => {
       .post("http://localhost:5000/user/login", account)
       .then((res) => {
         //console.log(res.data);
-        localStorage.setItem('token_thewolf',JSON.stringify(res.data.data))
-        navigate('/account')
+        localStorage.setItem("token_thewolf", JSON.stringify(res.data.data));
+        if (query && query === "checkout") navigate("/checkouts");
+        else navigate("/account");
       })
       .catch((exeption) => {
         if (exeption.response) {
           //console.log(exeption.response.data.message);
           //console.log(exeption.response.status);
-          setError(exeption.response.data.message)
+          setError(exeption.response.data.message);
         }
       });
   };
@@ -57,7 +63,9 @@ const Login = () => {
                 setAccount({ ...account, [name]: value });
               }}
             >
-              {error.length !== 0 && <p className=" mb-[10px] capitalize">{error}</p>}
+              {error.length !== 0 && (
+                <p className=" mb-[10px] capitalize">{error}</p>
+              )}
               <div className="block text-black-primary">
                 <div className="mb-[30px]">
                   <input

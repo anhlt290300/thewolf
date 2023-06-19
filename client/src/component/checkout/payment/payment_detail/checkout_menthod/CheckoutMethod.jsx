@@ -25,31 +25,32 @@ const CheckoutMethod = () => {
           }}
           className="p-[1.3em] items-center cursor-pointer flex w-auto"
         >
-          <div className=" flex items-center pr-[1em] whitespace-nowrap">
+          <div className=" flex items-center justify-between pr-[1em] whitespace-nowrap">
             <input
               type="radio"
               name="checkout"
               id=""
               checked={Fundiin}
-              className="cursor-pointer appearance-none border-[#cccccc] border-[1px] mr-[0.75em] border-solid checked:bg-[#338dbc] bg-transparent rounded-full w-[18px] h-[18px] relative transition-all duration-200 ease-in-out align-[-4px]
-                after:absolute after:top-1/2 after:right-1/2 after:translate-x-1/2 after:-translate-y-1/2 after:w-[4px] after:h-[4px] after:rounded-full after:bg-transparent after:checked:bg-white after:pointer-events-none	
+              onChange={(e) => {}}
+              className="cursor-pointer appearance-none border-[#cccccc] border-[1px] pr-[1em] border-solid checked:bg-[#338dbc] bg-transparent rounded-full w-[18px] h-[18px] relative transition-all duration-200 ease-in-out align-[-4px]
+                after:absolute after:top-1/2 after:right-1/2 after:translate-x-1/2 after:-translate-y-1/2 after:min-w-[4px] after:min-h-[4px] after:rounded-full after:bg-transparent after:checked:bg-white after:pointer-events-none	
               "
             />
-            <div className="flex items-center">
+            <div className="flex items-center ml-[0.75em]">
               <img
                 src="https://assets.fundiin.vn/merchant/logo_image.png?20230102"
                 alt=""
                 className="w-[40px] h-[40px] mr-[10px] overflow-clip"
               />
-              <div className="block">
-                <span>
+              <div className="flex flex-wrap">
+                <span className=" whitespace-break-spaces">
                   Fundiin - Mua trước trả sau 0% lãi suất{" "}
-                  <img
-                    src="https://assets.fundiin.vn/merchant/promo_appro_40k.svg?20032023"
-                    alt=""
-                    className="ml-[10px] h-[22px] align-bottom inline-block"
-                  />
                 </span>
+                <img
+                  src="https://assets.fundiin.vn/merchant/promo_appro_40k.svg?20032023"
+                  alt=""
+                  className="ml-[10px] h-[22px] align-bottom inline-block flex-wrap"
+                />
               </div>
             </div>
           </div>
@@ -103,6 +104,7 @@ const CheckoutMethod = () => {
         >
           <div className=" flex items-center pr-[1em] whitespace-nowrap">
             <input
+              onChange={(e) => {}}
               type="radio"
               name="checkout"
               id=""
@@ -118,7 +120,9 @@ const CheckoutMethod = () => {
                 className="w-[40px] h-[40px] mr-[10px] overflow-clip"
               />
               <div className="block">
-                <span>Thanh toán khi giao hàng (COD) </span>
+                <span className=" whitespace-break-spaces">
+                  Thanh toán khi giao hàng (COD){" "}
+                </span>
               </div>
             </div>
           </div>
@@ -133,6 +137,7 @@ const CheckoutMethod = () => {
         >
           <div className=" flex items-center pr-[1em] whitespace-nowrap">
             <input
+              onChange={(e) => {}}
               type="radio"
               name="checkout"
               id=""
@@ -148,7 +153,9 @@ const CheckoutMethod = () => {
                 className="w-[40px] h-[40px] mr-[10px] overflow-clip"
               />
               <div className="block">
-                <span>Chuyển khoản qua ngân hàng</span>
+                <span className=" whitespace-break-spaces">
+                  Chuyển khoản qua ngân hàng
+                </span>
               </div>
             </div>
           </div>
