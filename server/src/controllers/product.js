@@ -69,9 +69,9 @@ const insertProduct = async (req, res) => {
 
   try {
     const arr = getData();
-    console.log(arr.length);
+    //console.log(arr.length);
     for (let i = 0; i < arr.length; i++) {
-      (type = arr[i].type),
+      (type = [arr[i].type]),
         (soldout = arr[i].soldout),
         (title = arr[i].title),
         (imgcard = arr[i].imgcard),
@@ -129,6 +129,25 @@ const getProductByTitle = async (req, res) => {
   }
 };
 
+const updateTypeProduct = async (req, res) => {
+  const { product_title, type } = req.body;
+
+  try {
+    let result = await productRepository.updateTypeProduct({
+      product_title,
+      type,
+    });
+    res.status(HttpStatusCode.OK).json({
+      message: `already update type product `,
+      data: result,
+    });
+  } catch (exception) {
+    res.status(HttpStatusCode.INTERNAL_SERVER_ERROR).json({
+      message: exception.toString(),
+    });
+  }
+};
+
 const getListProduct = async (req, res) => {
   const { products } = req.query;
   const arrIdProduct = products.split(",");
@@ -153,4 +172,5 @@ export default {
   insertProduct,
   getProductByTitle,
   getListProduct,
+  updateTypeProduct,
 };

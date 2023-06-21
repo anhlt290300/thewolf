@@ -4,14 +4,16 @@ export default mongoose.model(
   "Product",
   new Schema({
     id: { type: ObjectId },
-    type: {
-      type: String,
-      required: true, //NOT NULL
-      validate: {
-        validator: (value) => value.length > 1,
-        message: "type must be at least 2 characters",
+    type: [
+      {
+        type: String,
+        required: true, //NOT NULL
+        validate: {
+          validator: (value) => value.length > 1,
+          message: "type must be at least 2 characters",
+        },
       },
-    },
+    ],
     soldout: {
       type: Number,
       required: true,

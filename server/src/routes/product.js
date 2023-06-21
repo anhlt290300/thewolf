@@ -8,11 +8,12 @@ productRouter.get("/", (req, res) => {
 
 productRouter.post("/create-product", productController.createProduct);
 
+productRouter.post("/update-type", productController.updateTypeProduct);
+
 //productRouter.get("/abc/a", productController.getProductByType);
 productRouter.get("/getproducts", productController.getListProduct);
 
 productRouter.get("/:title", productController.getProductByTitle);
-
 
 productRouter.get("/fake/start", productController.insertProduct);
 

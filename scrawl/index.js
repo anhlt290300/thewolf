@@ -33,6 +33,13 @@ app.get("/abc", async (req, res) => {
   res.status(200).json(data);
 });
 
+app.get("/blogs", async (req, res) => {
+  const browser = startBrowser();
+  const url = 'https://thewolf.vn/blogs/we-are-wolfer'
+  const data = await controller.scraperController_Blogs(browser, url);
+  res.status(200).json(data);
+});
+
 
 
 app.listen(4000, () => {

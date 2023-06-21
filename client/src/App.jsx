@@ -27,10 +27,17 @@ import Account from "./pages/Account";
 import AboutUser from "./component/user/AboutUser";
 import Addresses from "./component/user/Addresses";
 import Checkout from "./pages/Checkout";
+import Blogs from "./pages/Blogs";
 import { checkUser, getUser, logout } from "./api/user";
 import { getProductByTitle, getProductByType } from "./api/product";
 
 import store from "./redux/store";
+import {
+  getAllBlogs,
+  getBlogByCategory,
+  getBlogByCollection,
+} from "./api/blogs";
+import Blog from "./pages/Blog";
 
 const App = () => {
   const flag = useSelector((state) => state.mark.flag);
@@ -174,6 +181,35 @@ const router = createBrowserRouter(
           errorElement={<ErrorPage />}
         />
         <Route path="/cart/" element={<Cart />} />
+        <Route
+          path="/blogs/:collection"
+          loader={async ({ params }) => {
+            let collection_ = params.collection;
+
+            if (collection_ === "all") {
+              let blogs = await getAllBlogs();
+              return blogs;
+            } else {
+              //console.log(collection_)
+              let blogs = await getBlogByCollection({ collection_ });
+              return blogs;
+            }
+          }}
+          element={<Blogs />}
+          errorElement={<ErrorPage />}
+        />
+        <Route
+          path="/blogs/:collection/:category"
+          loader={async ({ params }) => {
+            let collection_ = params.collection;
+            let category = params.category;
+
+            let blog = await getBlogByCategory({ collection_, category });
+            return blog;
+          }}
+          element={<Blog />}
+          errorElement={<ErrorPage />}
+        />
       </Route>
       <Route
         path="/checkouts"
@@ -193,7 +229,7 @@ const router = createBrowserRouter(
             <Footer />
           </>
         }
-      ></Route>
+      />
     </Route>
   )
 );

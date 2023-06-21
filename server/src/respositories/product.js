@@ -17,8 +17,8 @@ const createProduct = async ({
   colors,
   sizes,
 }) => {
-  const existingProducts = await Product.findOne({ code }).exec();
-  if (!!existingProducts && code !== "null") {
+  const existingProducts = await Product.findOne({ title }).exec();
+  if (!!existingProducts ) {
     //throw new Exception(Exception.PRODUCT_EXIST);
     return "lap ne";
   }
@@ -41,15 +41,29 @@ const createProduct = async ({
   return "Create product!!";
 };
 
-const getProductByTitle = async ({ title }) => {
-  let href = "/products/" + title;
+const updateTypeProduct = async ({ product_title, type }) => {
+  let href = "/products/" + product_title;
   const product = await Product.find({}).then((products) => {
-    //console.log(products.length)
     return products.filter((el) => {
       return el.title.href === href;
     });
   });
-  // console.log(product);
+  //console.log(product);
+
+  if (product.length > 0) {
+    await Product.updateOne({ title: product[0].title }, { type: type });
+  } else throw new Exception(Exception.PRODUCT_NOT_EXIST);
+};
+
+const getProductByTitle = async ({ title }) => {
+  let href = "/products/" + title;
+  const product = await Product.find({}).then((products) => {
+    //console.log(products)
+    return products.filter((el) => {
+      return el.title.href === href;
+    });
+  });
+  console.log(product)
   if (product.length > 0) return product[0];
   else return null;
 };
@@ -87,4 +101,5 @@ export default {
   getProductByTitle,
   getProductByType,
   getListProductById,
+  updateTypeProduct,
 };
