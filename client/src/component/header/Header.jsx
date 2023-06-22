@@ -57,7 +57,7 @@ const Header = () => {
     <header id="header" className="z-[999] h-fit relative">
       <div
         ref={(el) => (headerRef.current = el)}
-        className=" block bottom-full left-0 transition-all duration-500 ease-easy_  w-full bg-white h-fit"
+        className=" block bottom-full left-0 transition-all duration-500 ease-easy_  w-full bg-transparent h-fit"
       >
         <div className=" desktop:p-[10px] py-[10px] tablet:px-[15px] px-[12px] flex w-full select-none">
           <div className=" flex-1 desktop:block hidden" />

@@ -5,7 +5,6 @@ import HomeBanner from '../component/home/HomeBanner'
 import HomeInfomation from '../component/home/HomeInfomation'
 const Home = () => {
 
-  console.log(process.env)
   return (
     <div className=" ">
       <Slider />

@@ -133,6 +133,18 @@ export const collectionBannerData = [
     type: "shoes-for-decor",
     src: "https://file.hstatic.net/200000033444/file/thiet_ke_chua_co_ten-6_163400341857423cad881408f8e9e1d9.jpg",
   },
+  {
+    type: "the-gent-wolf",
+    src: "https://file.hstatic.net/200000033444/file/combat_ec468acdeb664f039965a09f9c827402.jpg",
+  },
+  {
+    type: "the-original-wolf",
+    src: "https://file.hstatic.net/200000033444/file/z4425215060270_21f7833a8e03e77c46c7f51c0c919c96_55b059e8e4a447fda598ffd4f5f2219b.jpg",
+  },
+  {
+    type: "monkstrap-nam",
+    src: "https://file.hstatic.net/200000033444/file/combat_ec468acdeb664f039965a09f9c827402.jpg",
+  },
 ];
 
 export const getBannerForType = (type) => {

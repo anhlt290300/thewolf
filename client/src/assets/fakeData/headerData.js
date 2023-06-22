@@ -142,26 +142,34 @@ export const header = [
   //   href: "/collections/the-wolf-jacket",
   //   options: [{ megaMenu: false, option: [], images: [] }],
   // },
-  // {
-  //   title: "COLLECTION",
-  //   href: "/",
-  //   options: [
-  //     {
-  //       megaMenu: true,
-  //       option: [
-  //         {
-  //           title: "THE SEAN WOLF COLLECTION",
-  //           href: "/collections/the-sean-wolf-collection",
-  //         },
-  //         {
-  //           title: "THE MARS WOLF COLLECTION",
-  //           href: "/collections/the-mars-wolf-collection",
-  //         },
-  //       ],
-  //       images: [],
-  //     },
-  //   ],
-  // },
+  {
+    title: "COLLECTION",
+    href: "/",
+    options: [
+      {
+        megaMenu: true,
+        option: [
+          {
+            title: "THE GENT WOLF",
+            href: "/collections/the-gent-wolf",
+          },
+          {
+            title: "THE ORIGINAL WOLF",
+            href: "/collections/the-original-wolf",
+          },
+          {
+            title: "THE SEAN WOLF COLLECTION",
+            href: "/collections/the-sean-wolf-collection",
+          },
+          {
+            title: "THE MARS WOLF COLLECTION",
+            href: "/collections/the-mars-wolf-collection",
+          },
+        ],
+        images: [],
+      },
+    ],
+  },
   {
     title: "SHOES FOR DECOR",
     href: "/collections/shoes-for-decor",

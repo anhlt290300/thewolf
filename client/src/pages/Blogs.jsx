@@ -11,7 +11,7 @@ const Blogs = () => {
   return (
     <div>
       <BreadCrumb />
-      <div className="pt-[30px] grid grid-cols-12 gap-[30px] px-[15px]">
+      <div className="pt-[30px]  desktop:grid flex flex-col grid-cols-12 desktop:gap-[30px] gap-0  px-[15px]">
         <div className=" col-span-3">
           <NewBlog blogs={data} />
           <BlogCategory />
@@ -19,7 +19,9 @@ const Blogs = () => {
 
         <div className=" col-span-9">
           <div>
-            <h1 className=" text-[30px] font-bold mb-[30px]">{title}</h1>
+            <h1 className=" text-[30px] font-bold mb-[30px] tablet:text-left text-center
+             tablet:after:w-0 after:w-[60px] after:h-[4px] after:block after:bg-black-primary after:mx-auto after:mt-[25px]
+            ">{title}</h1>
           </div>
           <div className="w-full">
             {data &&

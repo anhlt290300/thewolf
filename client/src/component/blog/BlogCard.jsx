@@ -11,7 +11,7 @@ const BlogCard = ({ blog }) => {
     title,
   } = blog;
   return (
-    <div className="w-full grid grid-cols-12 gap-[30px]">
+    <div className="w-full desktop:grid flex flex-col grid-cols-12 desktop:gap-[30px] gap-[15px]">
       <div className=" col-span-4">
         <a href={`/blogs/${collection_}/${category}`}>
           <img src={img} alt={title} className=" overflow-clip" />

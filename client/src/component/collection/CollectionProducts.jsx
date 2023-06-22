@@ -20,7 +20,7 @@ const CollectionProducts = ({ products }) => {
           {products.length !== 0 &&
             products.map((item, index) => {
               return (
-                <div key={index} className="bg-white mb-[10px] desktop:px-[15px] px-[5px]">
+                <div key={index} className="bg-white mb-[10px] desktop:px-[1px] px-[1px]">
                   <ProductCard product={item} />
                 </div>
               );

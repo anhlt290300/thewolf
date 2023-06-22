@@ -94,7 +94,7 @@ const router = createBrowserRouter(
             let type = param.slice(param.indexOf("?") + 1);
             let products = await getProductByType({ type });
             //console.log(products)
-            if (products.length === null) {
+            if (products.length === 0) {
               throw new Response("Bad Request", { status: 400 });
             } else return products;
           }}
@@ -107,7 +107,7 @@ const router = createBrowserRouter(
             let title = params.title;
 
             let product = await getProductByTitle({ title });
-            if (product.length === null) {
+            if (product.length === 0) {
               throw new Response("Bad Request", { status: 400 });
             } else return product;
           }}
